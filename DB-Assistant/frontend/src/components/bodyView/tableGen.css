@@ -1,0 +1,44 @@
+.table-cont{
+    background-color: #f0f8ff1f;
+    border-radius: 10px;
+    margin: 1% auto;
+}
+
+.tHead-cont{
+    background-color: #68b5f81f;
+    border-radius: 10px;
+}
+
+.tHeading{
+    background-color: #edca59;
+    padding: 3px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    color: black;
+}
+
+.tHeading:hover{
+    border: 2px solid #000000;
+    transition: 1ms ease-in-out;
+}
+
+.tRow{
+    background-color: transparent;
+    width: auto;
+    text-align: center;
+    border-radius: 10px;
+}
+.tData{
+    padding: 3px;
+    border-radius: 10px;
+}
+.tData:hover{
+    cursor: pointer;
+    background-color: #23232394;
+    transition: 0.8ms ease-in-out;
+}
+
+.tBody{
+    background-color: #ffffff00;
+    width: auto;
+}

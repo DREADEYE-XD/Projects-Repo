@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Manrope:wght@200;400;800&family=Open+Sans:wght@300&family=Poppins:wght@300&family=Roboto+Slab:wght@100;600&family=Signika:wght@300&family=Tajawal&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.5s ease-in-out;
+}
+
+:root {
+  --grey0: hsl(0, 1%, 63%);
+  --grey1: hsl(190, 1%, 27%);
+  --grey2: #cdcdcd;
+  --grey3: #cccccc;
+
+  --body-background-color: #6da4aa;
+
+  --transparent0: hsla(120, 75%, 50%, 0);
+  --transparent1: rgba(105, 105, 105, 0.392);
+  --transparent2: #0000001e;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--transparent0);
+  border-radius: 100vw;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--grey1);
+  border-radius: 100vw;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--grey0);
+}
+
+body {
+  background-color: var(--body-background-color);
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}

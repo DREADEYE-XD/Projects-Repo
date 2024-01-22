@@ -1,0 +1,62 @@
+.navCont{
+    display: flex;
+    justify-content: space-evenly;
+/*  background: linear-gradient(to right , var(--wheat3), var(--wheat2), var(--wheat0), var(--wheat2), var(--wheat3));
+*/  width: 100%;
+    height: 80px;
+  }
+.headerCont{
+    display: flex;
+    background-color: transparent;
+/*  background: linear-gradient(to right , var(--wheat3), var(--wheat2), var(--wheat0), var(--wheat2), var(--wheat3));
+*/    width: 50%;
+    height: 80px;
+    justify-content: right;
+    align-items: center;
+    z-index: 10;
+}
+.dropdown{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.navCont h1{
+    margin-left: 10px;
+    font-size: 35px;
+    font-family: 'Manrope', serif;
+    font-stretch: expanded;
+    color: #000000;
+}
+
+.navCont .table-view-btn{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navCont button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    background-color: #cecece;
+}
+
+.navCont .active{
+    background-color: #fae4a7;
+}
+
+.navCont button:hover{
+    background-color: #fae4a7;
+    transition: 4ms ease-in-out;
+}
+
