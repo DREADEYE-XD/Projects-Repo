@@ -5,7 +5,8 @@ const Navbar = () => {
 
   return (
     <nav>
-        This is Navbar
+        <img src="" alt="" />
+        <h1>Weather App</h1>
     </nav>
   );
 };

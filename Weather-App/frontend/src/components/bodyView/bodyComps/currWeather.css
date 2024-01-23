@@ -1,0 +1,15 @@
+.curr-weather-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: antiquewhite;
+    width: 350px;
+    height: 400px;
+}
+
+h2{
+    padding: 20px;
+    font-size: 90px;
+}
+
