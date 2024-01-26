@@ -1,53 +1,94 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./bodyView.css";
-//import CurrWeather from "./bodyComps/currWeatherComps/currWeather";
+import CurrWeather from "./bodyComps/currWeatherComps/currWeather";
 import axios from "axios";
 
-// const appId = "aa06c5bd726a3a36aaa80f484396993b";
+const appId = "aa06c5bd726a3a36aaa80f484396993b";
+const defaultURL = "https://api.openweathermap.org/data/2.5/";
+const defaultData = {
+  weather: [{ id: "", main: "", description: "", icon: "" }],
+
+  main: {
+    temp: "",
+    feels_like: "",
+    temp_min: "",
+    temp_max: "",
+    pressure: "",
+    humidity: "",
+    sea_level: "",
+    grnd_level: "",
+  },
+  wind: { speed: "", deg: "", gust: "" },
+  clouds: { all: "" },
+  dt: "",
+  sys: {
+    type: "",
+    id: "",
+    country: "",
+    sunrise: "",
+    sunset: "",
+  },
+  timezone: "",
+  id: "",
+  name: "",
+  cod: "",
+};
 
 const BodyView = () => {
-  // const [search, setSearch] = useState();
-  const [weatherData, setWeatherData] = useState({});
+  const [cityName, setCityName] = useState("");
+  const [weatherData, setWeatherData] = useState(defaultData);
+  const [forecastData, setForecastData] = useState(defaultData);
 
-  //const currWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${appId}&units=metric`;
+  //const currWeatherAPI = ``;
 
   const searchedData = () => {
-    // Promise.all(
-    //   `http://dataservice.accuweather.com/currentconditions/v1/3146227?apikey=RwOcU1Iuif2zwzfRYVUb9X1gwpdWPTyO&language=en-us&details=false`
-    // ).then(async (response) => {
-    //   console.log(response.data);
-    // });
+    axios
+      .get(
+        `${defaultURL}weather?q=${cityName}&appid=${appId}&units=metric`
+      )
+      .then(async (response) => {
+        setWeatherData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-    // fetch(
-    //   `http://dataservice.accuweather.com/currentconditions/v1/3146227?apikey=RwOcU1Iuif2zwzfRYVUb9X1gwpdWPTyO&language=en-us&details=false`
-    // ).then((response) => {
-    //   console.log(response.data);
-    // });
+      //forecast?q={city name}&appid={API key}
 
-    axios.get(`http://dataservice.accuweather.com/currentconditions/v1/3146227?apikey=RwOcU1Iuif2zwzfRYVUb9X1gwpdWPTyO&language=en-us&details=false`)
-    .then(response => {
-      let res = response.data;
-      console.log(res);
-      setWeatherData(res);
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    axios
+      .get(
+        `${defaultURL}forecast?q=${cityName}&appid=${appId}&units=metric`
+      )
+      .then(async (response) => {
+        setForecastData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      }); 
   };
 
-  console.log(weatherData[0]);
+  console.log(forecastData);
 
   return (
     <body>
       <input
         type="text"
         placeholder="Enter a place"
-        // onChange={(e) => {
-        //   setSearch(e.target.value);
-        // }}
+        onChange={(e) => {
+          setCityName(e.target.value);
+        }}
       />
       <button onClick={searchedData}>Submit</button>
-      {/* 9<CurrWeather /> */}
+      <CurrWeather 
+        name={weatherData.name}
+        country={weatherData.sys.country}
+        icon={weatherData.weather[0].icon}
+        weatherDesc={weatherData.weather[0].description}
+        temp={weatherData.main.temp}
+        temp_max={weatherData.main.temp_max}
+        temp_min={weatherData.main.temp_min}
+        feels_like={weatherData.main.feels_like}
+      />
     </body>
   );
 };
