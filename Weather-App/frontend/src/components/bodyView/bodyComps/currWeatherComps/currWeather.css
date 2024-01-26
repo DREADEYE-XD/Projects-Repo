@@ -14,6 +14,7 @@
     background-color: antiquewhite;
     width: 350px;
     height: 400px;
+    font-family: "Roboto", sans-serif;
 }
 
 /* .curr-weather-cont * {
@@ -29,9 +30,9 @@
     align-items: center;
 }
 
-.city{
+/* .cityName{
     
-}
+} */
 
 .city-loc{
     grid-column: span 2;
@@ -43,7 +44,9 @@
 }
 
 .wthr-desc{
-
+    font-family: "Roboto", sans-serif;
+    justify-self: left;
+    margin-left: 20px;
 }
 
 .temp-cont{
@@ -56,11 +59,16 @@
     height: 100%;
 }
 
+.temp{
+    font-size: 55px;
+    font-family: "Oswald", sans-serif;
+}
+
 .min-max{
     display:flex;
     flex-wrap: wrap;
     width: 35px;
-    height: 100%;
+    height: 85%;
     align-items: center;
 }
 
@@ -76,9 +84,18 @@
     width: 100%;
     height: 100%;
 }
+.icn{
+    display: flex;
+    flex-direction: column;
+}
+
+.icn h4{
+    font-size: 13px;
+}
 
 .forecast-desc{
     grid-column: span 2;
+    font-family: "Roboto Slab", serif;
 }
 
 
