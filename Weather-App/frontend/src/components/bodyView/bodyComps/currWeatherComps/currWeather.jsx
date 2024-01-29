@@ -7,8 +7,19 @@ import ForecastIcns from "./forecastIcns";
 https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 */
 
-const CurrWeather = ({ name, country, icon, weatherDesc, temp, temp_max, temp_min, feels_like, averageTemps }) => {
-  console.log(averageTemps)
+const CurrWeather = ({
+  name,
+  country,
+  id,
+  icon,
+  weatherDesc,
+  temp,
+  temp_max,
+  temp_min,
+  feels_like,
+  averageTemps,
+}) => {
+
   return (
     <div className="curr-weather-cont">
       <div className="loc-cont">
@@ -20,7 +31,7 @@ const CurrWeather = ({ name, country, icon, weatherDesc, temp, temp_max, temp_mi
 
       <img
         className="currWthrIcn"
-        src={"https://openweathermap.org/img/wn/"+ icon + "@2x.png"}
+        src={`./icons/weatherIcons/${icon}.svg`}
         alt=""
         height="130"
         width="130"
@@ -52,13 +63,19 @@ const CurrWeather = ({ name, country, icon, weatherDesc, temp, temp_max, temp_mi
       </div>
 
       <ul className="forecast-icns">
-        <ForecastIcns date={averageTemps[1].date} icn={averageTemps[1].icon} />
-        <ForecastIcns date={averageTemps[2].date} icn={averageTemps[2].icon} />
-        <ForecastIcns date={averageTemps[3].date} icn={averageTemps[3].icon} />
-        <ForecastIcns date={averageTemps[4].date} icn={averageTemps[4].icon} />
-        <ForecastIcns date={averageTemps[5].date} icn={averageTemps[5].icon} />
+        {averageTemps.map((element, index) => {
+          return (
+            <ForecastIcns
+              day={averageTemps[index].date}
+              icn={averageTemps[index].icon}
+              temp={Math.round(averageTemps[index].averageTemp)}
+            />
+          );
+        })}
       </ul>
-      <p className="forecast-desc">{"Feels Like " + Math.round(feels_like) + "°"}</p>
+      <p className="forecast-desc">
+        {"Feels Like " + Math.round(feels_like) + "°"}
+      </p>
     </div>
   );
 };

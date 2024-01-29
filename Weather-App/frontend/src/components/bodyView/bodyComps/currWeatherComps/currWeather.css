@@ -1,4 +1,4 @@
-.curr-weather-cont{
+    .curr-weather-cont{
     position: absolute;
     box-sizing: border-box;
     border-radius: 20px;
@@ -17,6 +17,8 @@
     font-family: "Roboto", sans-serif;
 }
 
+
+
 /* .curr-weather-cont * {
     border: 0.5px solid rgba(0, 0, 0, 0.273);
 }  */
@@ -28,6 +30,7 @@
     grid-column: span 2;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 }
 
 /* .cityName{
@@ -36,6 +39,7 @@
 
 .city-loc{
     grid-column: span 2;
+    font-size: 15px;
 }
 
 .currWthrIcn{
@@ -65,9 +69,12 @@
 }
 
 .min-max{
-    display:flex;
-    flex-wrap: wrap;
-    width: 35px;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 20px 30px;
+    grid-template-rows: 25px 25px;
+    width: 30%;
     height: 85%;
     align-items: center;
 }

@@ -27,6 +27,97 @@ export const defaultCurrentWeatherData = {
     cod: "",
 };
 
+export const defualtAverageTemps = [
+    {
+        date: "0",
+        averageTemp: 0,
+        feels_like: 0,
+        temp_min: 0,
+        temp_max: 0,
+        pressure: 0,
+        humidity: 0,
+        description: 0, // Assumi ng the weather description is the same for the day
+        icon: 0, // Assuming the weather icon is the same for the day
+        wind_speed: 0,
+        wind_deg: 0,
+        wind_gust: 0,
+      },
+
+      {
+        date: 0,
+        averageTemp: 0,
+        feels_like: 0,
+        temp_min: 0,
+        temp_max: 0,
+        pressure: 0,
+        humidity: 0,
+        description: 0, // Assumi ng the weather description is the same for the day
+        icon: 0, // Assuming the weather icon is the same for the day
+        wind_speed: 0,
+        wind_deg: 0,
+        wind_gust: 0,
+      },
+
+      {
+        date: 0,
+        averageTemp: 0,
+        feels_like: 0,
+        temp_min: 0,
+        temp_max: 0,
+        pressure: 0,
+        humidity: 0,
+        description: 0, // Assumi ng the weather description is the same for the day
+        icon: 0, // Assuming the weather icon is the same for the day
+        wind_speed: 0,
+        wind_deg: 0,
+        wind_gust: 0,
+      },
+
+      {
+        date: 0,
+        averageTemp: 0,
+        feels_like: 0,
+        temp_min: 0,
+        temp_max: 0,
+        pressure: 0,
+        humidity: 0,
+        description: 0, // Assumi ng the weather description is the same for the day
+        icon: 0, // Assuming the weather icon is the same for the day
+        wind_speed: 0,
+        wind_deg: 0,
+        wind_gust: 0,
+      },
+
+      {
+        date: 0,
+        averageTemp: 0,
+        feels_like: 0,
+        temp_min: 0,
+        temp_max: 0,
+        pressure: 0,
+        humidity: 0,
+        description: 0, // Assumi ng the weather description is the same for the day
+        icon: 0, // Assuming the weather icon is the same for the day
+        wind_speed: 0,
+        wind_deg: 0,
+        wind_gust: 0,
+      },
+      {
+        date: 0,
+        averageTemp: 0,
+        feels_like: 0,
+        temp_min: 0,
+        temp_max: 0,
+        pressure: 0,
+        humidity: 0,
+        description: 0, // Assumi ng the weather description is the same for the day
+        icon: 0, // Assuming the weather icon is the same for the day
+        wind_speed: 0,
+        wind_deg: 0,
+        wind_gust: 0,
+      }
+]
+
 export const defaultForecastData = [
     {
         cod: "",

@@ -5,7 +5,7 @@ const ForecastIcns = (props) => {
     <li className="icn">
           <h4>{props.day}</h4>
           <img
-            src={props.icn}
+            src={`https://openweathermap.org/img/wn/${props.icn}@2x.png`}
             alt=""
             height="40"
             width="40"
