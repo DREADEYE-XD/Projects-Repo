@@ -20,6 +20,7 @@ const CurrWeather = ({
   averageTemps,
 }) => {
 
+  console.log(averageTemps.icon);
   return (
     <div className="curr-weather-cont">
       <div className="loc-cont">
@@ -27,17 +28,20 @@ const CurrWeather = ({
         <h1 className="cityName">{name}</h1>
       </div>
 
-      <h3 className="city-loc">{country}</h3>
+      <div className="city-loc">
+        <h3>{country}</h3>
+      </div>
 
-      <img
-        className="currWthrIcn"
-        src={`./icons/weatherIcons/${icon}.svg`}
-        alt=""
-        height="130"
-        width="130"
-      />
-
-      <h3 className="wthr-desc">{weatherDesc}</h3>
+      <div className="currWthr">
+        <img
+          className="currWthrIcn"
+          src={`./icons/weatherIcons/${icon}.svg`}
+          alt=""
+          height="130"
+          width="130"
+        />
+        <h3 className="wthr-desc">{weatherDesc}</h3>
+      </div>
 
       <div className="temp-cont">
         <h2 className="temp">{Math.round(temp)}°</h2>

@@ -10,7 +10,7 @@ const ForecastIcns = (props) => {
             height="40"
             width="40"
           />
-          <h4>{props.temp + "°"}</h4>
+          <h4 className='icn-temp'>{props.temp + "°"}</h4>
     </li>
   )
 }
