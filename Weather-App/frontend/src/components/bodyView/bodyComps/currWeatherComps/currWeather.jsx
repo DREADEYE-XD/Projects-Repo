@@ -19,12 +19,10 @@ const CurrWeather = ({
   feels_like,
   averageTemps,
 }) => {
-
-  console.log(averageTemps.icon);
   return (
     <div className="curr-weather-cont">
       <div className="loc-cont">
-        <img src="./icons/location.png" alt="" height="25" width="25" />
+        {/* <img src="./icons/location.png" alt="" height="25" width="25" /> */}
         <h1 className="cityName">{name}</h1>
       </div>
 
@@ -37,8 +35,6 @@ const CurrWeather = ({
           className="currWthrIcn"
           src={`./icons/weatherIcons/${icon}.svg`}
           alt=""
-          height="130"
-          width="130"
         />
         <h3 className="wthr-desc">{weatherDesc}</h3>
       </div>
