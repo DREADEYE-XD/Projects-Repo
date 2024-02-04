@@ -2,7 +2,7 @@ import React from "react";
 import "./otherWeather.css";
 
 const OtherWeather = (props) => {
-
+  console.log(props);
   return (
     <div className="other-weather-cont">
       <div className="aqi-cont">
@@ -21,7 +21,7 @@ const OtherWeather = (props) => {
             width="35"
           />
 
-          <span>40</span>
+          <span>{props.humidity}</span>
         </div>
         <div className="pressure-cont">
           <img
@@ -32,7 +32,7 @@ const OtherWeather = (props) => {
             width="30"
           />
 
-          <span>1015</span>
+          <span>{props.pressure}</span>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ const OtherWeather = (props) => {
             height="45"
             width="45"
           />
-          <span>25</span>
+          <span>{props.windSpeed}</span>
         </div>
         <div className="degrees">
           <img

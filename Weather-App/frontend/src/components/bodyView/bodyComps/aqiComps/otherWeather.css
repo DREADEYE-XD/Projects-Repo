@@ -48,7 +48,7 @@
 }
 
 .humidity-cont{
-    transform: rotate(90deg);
+    
 }
 
 .pressure-cont{
@@ -62,4 +62,8 @@
     gap: 50px;
     height: 120px;
     width: 100%;
+}
+
+.degrees{
+    transform: rotate(-45deg);
 }

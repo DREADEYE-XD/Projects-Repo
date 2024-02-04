@@ -143,7 +143,7 @@ const BodyView = () => {
         grnd_level={weatherData.main.grnd_level}
         wind_degrees={weatherData.wind.deg}
         wind_gust={weatherData.wind.gust}
-        wind_speed={weatherData.wind.speed}
+        windSpeed={weatherData.wind.speed}
       />
     </body>
   );
