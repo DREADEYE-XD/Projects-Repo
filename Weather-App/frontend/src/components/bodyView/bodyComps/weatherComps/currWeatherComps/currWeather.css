@@ -1,5 +1,5 @@
 .curr-weather-cont {
-  --background-color-top: #4e84b4;
+  --background-color-top: #5798d1b4;
   --font-color: White;
   position: relative;
   box-sizing: border-box;
@@ -12,9 +12,8 @@
   grid-template-rows: 45px 20px 80px 60px 90px 50px;
   background-image: linear-gradient(
     to bottom,
-    #274060 33.3%,
-    #27406071 66.6%,
-    #03030342 100%
+    #5693c98d 66.6%,
+    #80a4c4b4 100%
   );
   color: var(--font-color);
   width: 300px;

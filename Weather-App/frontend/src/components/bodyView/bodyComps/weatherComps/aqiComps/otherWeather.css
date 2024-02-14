@@ -1,5 +1,5 @@
 .other-weather-cont {
-    --background-color-top: #335d81cb;
+    --background-color-top: #5798d1b4;
     --font-color: White;
     position: relative;
     box-sizing: border-box;
@@ -15,7 +15,7 @@
 }
 
 .other-weather-cont > * {
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: var(--background-color-top);
 }
 
@@ -27,13 +27,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .aqi-color{
     height: 5px;
     width: 80px;
-    background-color: red;
     border-radius: 20px;
     margin-top: 5px;
 }
@@ -64,6 +62,6 @@
     width: 100%;
 }
 
-.degrees{
+/* .degrees{
     transform: rotate(-45deg);
-}
+} */

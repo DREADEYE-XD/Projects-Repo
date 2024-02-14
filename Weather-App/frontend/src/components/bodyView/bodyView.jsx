@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from "react";
 import "./bodyView.css";
-import CurrWeather from "./bodyComps/currWeatherComps/currWeather";
-import OtherWeather from "./bodyComps/aqiComps/otherWeather";
 import axios from "axios";
 import {
   defaultCurrentWeatherData,
   defualtAverageTemps,
   defaultForecastData,
 } from "./defaultData";
-
-// console.log("forecast: " + defaultForecastData[0].list[0].dt_txt);
+import InputPlace from "./bodyComps/inputBtnsComp/inputPlace";
+import BtnSubmit from "./bodyComps/inputBtnsComp/btnSubmit";
+import WeatherComps from "./bodyComps/weatherComps/weatherComps";
 
 const appId = "aa06c5bd726a3a36aaa80f484396993b";
+const AQItoken = "79bfb646698f3e8db88b0884bab18ddc2428ca08";
 const defaultURL = "https://api.openweathermap.org/data/2.5/";
+const defaultAQIURL = "https://api.waqi.info/v2/search/";
 
 const BodyView = () => {
   const [cityName, setCityName] = useState("");
   const [weatherData, setWeatherData] = useState(defaultCurrentWeatherData);
   const [forecastData, setForecastData] = useState(defaultForecastData);
   const [averageTemps, setAverageTemps] = useState(defualtAverageTemps);
-
+  const [aqiData, setAqiData] = useState(undefined);
+  const [visibility, setVisibility] = useState(false);
+  
   const searchedData = () => {
     axios
       .get(`${defaultURL}weather?q=${cityName}&appid=${appId}&units=metric`)
@@ -38,9 +41,17 @@ const BodyView = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    axios
+      .get(`${defaultAQIURL}?token=${AQItoken}&keyword=${cityName}`)
+      .then(async (response) => {
+        setAqiData(response.data.data[0].aqi);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  // console.log(weatherData.weather[0].icon);
   useEffect(() => {
     const calculateAverageTemps = () => {
       const dailyTemps = {};
@@ -98,7 +109,6 @@ const BodyView = () => {
       }));
 
       setAverageTemps(averages);
-      
     };
 
     if (forecastData.list) {
@@ -116,35 +126,23 @@ const BodyView = () => {
   return (
     <body>
       <div className="input-btns">
-      <input
-        type="text"
-        placeholder="Enter a place"
-        onChange={(e) => {
-          setCityName(e.target.value);
-        }}
-      />
-      <button onClick={searchedData}>Submit</button>
+        <InputPlace setCityName={setCityName} cityName={cityName}/>
+        <BtnSubmit setVisibility={setVisibility} searchedData={searchedData}/>
       </div>
-      <CurrWeather
-        name={weatherData.name}
-        country={weatherData.sys.country}
-        id={weatherData.weather[0].id}
-        icon={weatherDataIcon}
-        weatherDesc={weatherDesc}
-        temp={weatherData.main.temp}
-        temp_max={weatherData.main.temp_max}
-        temp_min={weatherData.main.temp_min}
-        feels_like={weatherData.main.feels_like}
-        averageTemps={averageTemps}
-      />
-      <OtherWeather 
-        pressure={weatherData.main.pressure}
-        humidity={weatherData.main.humidity}
-        grnd_level={weatherData.main.grnd_level}
-        wind_degrees={weatherData.wind.deg}
-        wind_gust={weatherData.wind.gust}
-        windSpeed={weatherData.wind.speed}
-      />
+      
+      <div className="weatherData-comps">
+        <WeatherComps 
+          weatherData={weatherData}
+          weatherDataIcon={weatherDataIcon}
+          weatherDesc={weatherDesc}
+          averageTemps={averageTemps}
+          aqiData={aqiData}
+          visibility={visibility}
+        />
+      </div>
+      
+
+      
     </body>
   );
 };
