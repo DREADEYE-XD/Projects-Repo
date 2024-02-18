@@ -1,8 +1,9 @@
 import React from 'react'
+import "./weatherComps.css";
 import CurrWeather from './currWeatherComps/currWeather'
 import OtherWeather from './aqiComps/otherWeather'
 
-const WeatherComps = (weatherData, weatherDataIcon, weatherDesc, averageTemps, aqiData, visibility) => {
+const WeatherComps = ({weatherData, weatherDataIcon, weatherDesc, averageTemps, aqiData, visibility}) => {
   return (
     <>
         {

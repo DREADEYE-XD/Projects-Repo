@@ -21,7 +21,7 @@ const BodyView = () => {
   const [forecastData, setForecastData] = useState(defaultForecastData);
   const [averageTemps, setAverageTemps] = useState(defualtAverageTemps);
   const [aqiData, setAqiData] = useState(undefined);
-  const [visibility, setVisibility] = useState(false);
+  const [visibility, setVisibility] = useState(true);
   
   const searchedData = () => {
     axios

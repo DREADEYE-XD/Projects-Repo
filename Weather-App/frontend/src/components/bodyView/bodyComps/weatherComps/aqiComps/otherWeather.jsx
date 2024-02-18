@@ -2,7 +2,6 @@ import React from "react";
 import "./otherWeather.css";
 
 const OtherWeather = (props) => {
-  console.log(props.aqiData);
   const colors = {
     green: "55a630",
     yellow: "ffea00",
