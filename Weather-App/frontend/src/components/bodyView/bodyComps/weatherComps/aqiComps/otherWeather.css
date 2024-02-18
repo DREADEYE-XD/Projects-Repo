@@ -1,5 +1,5 @@
 .other-weather-cont {
-    --background-color-top: #5798d1b4;
+    --background-color-top: #5798d1d0;
     --font-color: White;
     position: relative;
     box-sizing: border-box;
@@ -43,14 +43,6 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-}
-
-.humidity-cont{
-    
-}
-
-.pressure-cont{
-    
 }
 
 .wind-cont{

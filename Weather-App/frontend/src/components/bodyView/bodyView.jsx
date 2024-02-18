@@ -7,7 +7,6 @@ import {
   defaultForecastData,
 } from "./defaultData";
 import InputPlace from "./bodyComps/inputBtnsComp/inputPlace";
-import BtnSubmit from "./bodyComps/inputBtnsComp/btnSubmit";
 import WeatherComps from "./bodyComps/weatherComps/weatherComps";
 
 const appId = "aa06c5bd726a3a36aaa80f484396993b";
@@ -21,8 +20,8 @@ const BodyView = () => {
   const [forecastData, setForecastData] = useState(defaultForecastData);
   const [averageTemps, setAverageTemps] = useState(defualtAverageTemps);
   const [aqiData, setAqiData] = useState(undefined);
-  const [visibility, setVisibility] = useState(true);
-  
+  const [visibility, setVisibility] = useState(false);
+
   const searchedData = () => {
     axios
       .get(`${defaultURL}weather?q=${cityName}&appid=${appId}&units=metric`)
@@ -124,26 +123,25 @@ const BodyView = () => {
     .join(" ");
 
   return (
-    <body>
-      <div className="input-btns">
-        <InputPlace setCityName={setCityName} cityName={cityName}/>
-        <BtnSubmit setVisibility={setVisibility} searchedData={searchedData}/>
-      </div>
-      
-      <div className="weatherData-comps">
-        <WeatherComps 
-          weatherData={weatherData}
-          weatherDataIcon={weatherDataIcon}
-          weatherDesc={weatherDesc}
-          averageTemps={averageTemps}
-          aqiData={aqiData}
-          visibility={visibility}
-        />
-      </div>
-      
+    <div className="bodyView">
+      <InputPlace
+        setCityName={setCityName}
+        cityName={cityName}
+        setVisibility={setVisibility}
+        searchedData={searchedData}
+      />
+
+      <WeatherComps
+        weatherData={weatherData}
+        weatherDataIcon={weatherDataIcon}
+        weatherDesc={weatherDesc}
+        averageTemps={averageTemps}
+        aqiData={aqiData}
+        visibility={visibility}
+      />
 
       
-    </body>
+    </div>
   );
 };
 

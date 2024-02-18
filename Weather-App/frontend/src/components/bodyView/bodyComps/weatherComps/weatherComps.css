@@ -1,0 +1,7 @@
+.weatherData-comps{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    transition: 300ms ease-in-out;
+}

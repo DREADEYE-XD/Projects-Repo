@@ -6,13 +6,14 @@ import "./app.css";
 //const baseUrl = "https://api.openweathermap.org/data/2.5/";
 
 function App() {
-
-
   return (
-    <div>
-      <Navbar />
+    <div id="main-container">
+      <div className="cont-items">
+        <Navbar />
 
-      <BodyView />
+        <BodyView />
+      </div>
+      <img id="background-img" src="./images/earth.jpg" alt="" />
     </div>
   );
 }
