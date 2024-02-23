@@ -2,19 +2,19 @@ import React, { useState, useRef, useEffect } from "react";
 import cities from "cities.json";
 import "./inputPlace.css";
 
-const InputPlace = ({
-  setCityName,
-  setVisibility,
-  searchedData,
-}) => {
+const InputPlace = ({ setCityName, setVisibility, searchedData }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const [suggestionVisib, setSuggestionVisib] = useState(false);
+  const [btnDisabled, setBtnDisabled] = useState(true);
   const [imgStyle, setImgStyle] = useState({
     transition: "200ms ease-in-out",
     transform: "rotate(0deg)",
   });
+
+  const [submitted, setSubmitted] = useState("");
+
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -37,7 +37,9 @@ const InputPlace = ({
             handleSuggestionClick(suggestions[highlightedIndex]);
           }
           break;
-        case "Escape": setHighlightedIndex(null); setSuggestionVisib(false);
+        case "Escape":
+          setHighlightedIndex(null);
+          setSuggestionVisib(false);
           break;
 
         default:
@@ -50,7 +52,7 @@ const InputPlace = ({
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [highlightedIndex, suggestions ]);
+  }, [highlightedIndex, suggestions]);
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
@@ -91,27 +93,36 @@ const InputPlace = ({
     });
     setInputValue("");
 
-    if(e.key==="Enter"){
+    if (e.key === "Enter") {
       inputRef.current.focus();
-    setVisibility(true);
-    searchedData();
-    setImgStyle({
-      transition: "200ms ease-in-out",
-      transform: "rotate(90deg)",
-    });
-    setInputValue("");
+      setVisibility(true);
+      searchedData();
+      setImgStyle({
+        transition: "200ms ease-in-out",
+        transform: "rotate(90deg)",
+      });
+      setInputValue("");
+      setBtnDisabled(true);
     }
+
+    setSubmitted("submitted");
   };
 
   return (
-    <div className="inputPlace">
+    <div className={"inputPlace " + submitted}>
       <div className="input-btns">
         <input
           ref={inputRef}
           id="searcher"
           type="text"
           placeholder="Enter a place"
-          onChange={handleChange}
+          onChange={(e) => {
+            handleChange(e);
+            
+            if (e === null) {
+              setBtnDisabled(true);
+            } else setBtnDisabled(false);
+          }}
           value={inputValue}
         />
         {suggestionVisib && suggestions.length > 0 && (
@@ -129,11 +140,15 @@ const InputPlace = ({
         )}
       </div>
 
-      <div className="submit-btn">
-        <button onClick={handleSubmit} onKeyDown={handleSubmit}>
-          <div id="submit-img-cont">
+      <div className={btnDisabled ? "submit-btn-disabled" : "submit-btn"}>
+        <button
+          onClick={(e) => {handleSubmit(e); setBtnDisabled(true);}}
+          onKeyDown={handleSubmit}
+          disabled={btnDisabled}
+        >
+          <div id={btnDisabled ? "submit-img-cont-disabled" :"submit-img-cont"}>
             <img
-              style={imgStyle}
+              style={btnDisabled ? null : imgStyle}
               id="submit-img"
               src="./icons/arrow-right.png"
               alt=""

@@ -2,17 +2,22 @@
     --accent-color: #40bff1;
     display: flex;
     width: 100%;
-    height: auto;
     gap: 10px;
-    justify-content: center;
     text-align: center;
     margin-top: 10px;
+    justify-content: center;
+    transition: 300ms ease-in-out;
+}
+
+.submitted{
+    transition: 300ms ease-in-out;
 }
 
 .input-btns{
     display: flex;
     flex-direction: column;
     gap: 1px;
+    
 }
 #searcher{
     width: 250px;
@@ -66,7 +71,29 @@
     cursor: pointer;
 }
 
+.submit-btn-disabled button{
+    height: 35px;
+    width: 35px;
+    border-radius: 7px;
+    display: flex;
+    background-color: grey;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
 #submit-img-cont{
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    height: 27px;
+    width: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submit-img-cont-disabled{
     background-color: #fcfcfc;
     border-radius: 5px;
     height: 27px;
