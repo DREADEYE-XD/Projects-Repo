@@ -13,7 +13,7 @@ function App() {
         <Navbar />
 
         <BodyView />
-        
+
         <Footer />
       </div>
       <img id="background-img" src="./images/sunny_bg.jpg" alt="" />
