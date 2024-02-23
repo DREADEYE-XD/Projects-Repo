@@ -6,13 +6,11 @@
     text-align: center;
     margin-top: 10px;
     justify-content: center;
-    transform: translateY(225px);
     transition: 300ms ease-in-out;
 }
 
 .submitted{
     transition: 300ms ease-in-out;
-    transform: translateY(0px);
 }
 
 .input-btns{

@@ -10,11 +10,13 @@ const WeatherComps = ({
   averageTemps,
   aqiData,
   visibility,
+  imgLoaderDict,
+  currentImageIndex,
 }) => {
   return (
     <>
-      {visibility ? (
         <div className="weatherData-comps">
+
           <CurrWeather
             name={weatherData.name}
             country={weatherData.sys.country}
@@ -37,7 +39,7 @@ const WeatherComps = ({
             aqiData={aqiData}
           />
         </div>
-      ) : null}
+      
     </>
   );
 };

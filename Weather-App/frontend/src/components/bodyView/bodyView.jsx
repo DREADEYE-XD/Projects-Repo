@@ -21,7 +21,13 @@ const BodyView = () => {
   const [averageTemps, setAverageTemps] = useState(defualtAverageTemps);
   const [aqiData, setAqiData] = useState(undefined);
   const [visibility, setVisibility] = useState(false);
-
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const imgLoaderDict = [
+    "./icons/animation-ready/dust-day.svg",
+    "./icons/animation-ready/dust-wind.svg",
+    "./icons/animation-ready/thunderstorms-rain.svg",
+    "./icons/animation-ready/hurricane.svg",
+  ];
   const searchedData = () => {
     axios
       .get(`${defaultURL}weather?q=${cityName}&appid=${appId}&units=metric`)
@@ -50,6 +56,17 @@ const BodyView = () => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Move to the next image index
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === imgLoaderDict.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 900); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [imgLoaderDict.length]);
 
   useEffect(() => {
     const calculateAverageTemps = () => {
@@ -130,7 +147,7 @@ const BodyView = () => {
         setVisibility={setVisibility}
         searchedData={searchedData}
       />
-
+      {visibility ?  
       <WeatherComps
         weatherData={weatherData}
         weatherDataIcon={weatherDataIcon}
@@ -138,11 +155,20 @@ const BodyView = () => {
         averageTemps={averageTemps}
         aqiData={aqiData}
         visibility={visibility}
+        imgLoaderDict={imgLoaderDict}
+        currentImageIndex={currentImageIndex}
       />
+       :  null}
 
+ 
       
     </div>
   );
 };
 
 export default BodyView;
+
+
+/* <div className="loader">
+<img src={imgLoaderDict[currentImageIndex]} alt="" height="35" width="35"/>
+</div> */

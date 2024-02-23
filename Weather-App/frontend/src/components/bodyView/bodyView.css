@@ -2,10 +2,19 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: auto;
+    height: 550px;
     flex-wrap: wrap;
     gap: 20px;
     transition: 300ms ease-in-out;
     align-items: center;
 }
 
+.loader {
+    width: 10px;
+    height: 10px;
+    animation: line 4s linear infinite alternate;
+}
+  
+@keyframes line {
+    
+  }

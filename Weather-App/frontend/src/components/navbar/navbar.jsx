@@ -2,11 +2,16 @@ import React from "react";
 import "./navbar.css";
 
 const Navbar = () => {
-
+  
   return (
     <nav>
-        <img src="" alt="" />
-        <h1>Weather App</h1>
+      <img
+        src="./icons/weatherLogo.png"
+        alt=""
+        height="55"
+        width="55"
+      />
+      <h1>Weather App</h1>
     </nav>
   );
 };
