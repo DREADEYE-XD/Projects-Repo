@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import "./sidebar.css";
+import SidebarIcon from "./sidebar-icon/sidebar-icon";
+import SidebarLayer from "./sidebar-layer/sidebar-layer";
+
 const SideBar = () => {
+
+  const [focusStatus, setFocusStatus] = useState('focusOff');
+
   return (
-    <div className="sidebar-icon">
-      <input id="checkbox" type="checkbox" />
-      <label class="toggle" for="checkbox">
-        <div id="bar1" class="bars"></div>
-        <div id="bar2" class="bars"></div>
-        <div id="bar3" class="bars"></div>
-      </label>
+    <div className="sidebar">
+      <SidebarIcon setFocusStatus={setFocusStatus}/>
+
+      <SidebarLayer focusStatus={focusStatus}/>
     </div>
   );
 };

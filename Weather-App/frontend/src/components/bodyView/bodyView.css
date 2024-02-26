@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 550px;
+    height: 75vh;
     flex-wrap: wrap;
     gap: 20px;
     transition: 300ms ease-in-out;
@@ -15,6 +15,15 @@
     animation: line 4s linear infinite alternate;
 }
   
-@keyframes line {
-    
-  }
+@media only screen and (max-width: 750px){
+    .bodyView{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        height: 850px;
+        flex-wrap: wrap;
+        gap: 20%;
+        transition: 300ms ease-in-out;
+        align-items: center;
+    }
+}

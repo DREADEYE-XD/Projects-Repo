@@ -16,6 +16,7 @@ nav{
 .left{
     display: flex;
     justify-content: left;
+    gap: 35px;
 }
 
 .right{
