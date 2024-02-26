@@ -1,9 +1,10 @@
 nav{
-    width: 100vw;
+    min-width: 100vw;
     height: 60px;
     outline: 1px solid white;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .contents{

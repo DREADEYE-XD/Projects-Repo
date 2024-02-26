@@ -23,4 +23,19 @@ body{
     background-color: black;
     color: white;
     font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  

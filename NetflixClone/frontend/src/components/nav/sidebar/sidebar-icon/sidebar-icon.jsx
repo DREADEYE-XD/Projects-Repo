@@ -1,7 +1,7 @@
 import React from "react";
 const SidebarIcon = ({setFocusStatus}) => {
 
-    const HandleSideBar = ()=> {
+    const HandleSideBar = () => {
         setFocusStatus('focusOn')
     }
 

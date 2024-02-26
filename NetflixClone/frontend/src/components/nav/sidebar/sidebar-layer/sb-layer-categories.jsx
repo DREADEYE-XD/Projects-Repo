@@ -2,24 +2,29 @@ import React from "react";
 
 const SbLayerCategories = () => {
   const categories = [
-    "Action Comedies",
-    "Action Sci-Fi & Fantasy",
-    "Action Thrillers",
-    "Adventures",
-    "Comic Book and Superhero Movies",
-    "Action Anime",
-    "Adult Animation",
-    "Anime Comedies",
-    "Anime Dramas",
-    "Anime Sci-Fi",
-    "Disney",
-    "Family Features",
-    "Kids' TV"
+    "Anime",
+    "Dramas",
+    "Thriller Movies",
+    "Independent Movies",
+    "Horror Movies",
+    "Children & Family Movies",
+    "TV Shows",
+    "Romantic Movies",
+    "Comdey Movies",
+    "Sci-Fi & Fantasy Movies",
+    "Music & Musicals",
+    "Award Winning Films",
+    "Action and Adventure Movies",
+    "Documentaries",
+    "Hollywood Movies",
+    "Available For Download ",
+    "International Movies",
   ];
 
   return(
     <div className="sb-layer-categories">
         <ul className="categories">
+            <li className="home"><span>Home</span></li>
             {categories.map((value, index) => (
                 <li key={index} className="item"><span>{value}</span></li>
             ))}
