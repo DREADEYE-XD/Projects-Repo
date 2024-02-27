@@ -76,7 +76,7 @@ div::-webkit-scrollbar-thumb:hover {
   font-size: 10px;
   top: 10px;
   left: 34px;
-  border: 3.5px solid rgba(0, 0, 0, 0.74);
+  border: 3.5px solid #000000d4;
   /* box-shadow:  -4px 3px 10px #000000,
   5px -5px 10px #00000000; */
 }

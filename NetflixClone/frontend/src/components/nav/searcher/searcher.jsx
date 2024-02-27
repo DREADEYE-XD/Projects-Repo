@@ -1,8 +1,10 @@
 import React from 'react'
-
+import "./searcher.css";
 const Searcher = () => {
   return (
-    <div>Searcher</div>
+    <button className='searcher-btn'>
+      <img src="./icons/searcher.png" alt="" height='24' width='24' />
+    </button>
   )
 }
 

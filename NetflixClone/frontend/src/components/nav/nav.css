@@ -1,7 +1,7 @@
 nav{
     min-width: 100vw;
     height: 60px;
-    outline: 1px solid white;
+    /* outline: 1px solid white; */
     display: flex;
     justify-content: space-between;
     overflow: hidden;
@@ -17,10 +17,11 @@ nav{
 .left{
     display: flex;
     justify-content: left;
-    gap: 35px;
+    gap: 30px;
 }
 
 .right{
     display: flex;
     justify-content: right;
+    gap: 5px;
 }

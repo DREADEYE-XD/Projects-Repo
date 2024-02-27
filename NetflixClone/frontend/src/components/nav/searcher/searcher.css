@@ -1,0 +1,11 @@
+.searcher-btn{
+    height: 100%;
+    width: 60px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.searcher-btn:hover{
+    background-color: #464646ad;
+}

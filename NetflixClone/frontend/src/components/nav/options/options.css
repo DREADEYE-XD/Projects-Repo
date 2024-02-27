@@ -1,0 +1,20 @@
+.options{
+    display: flex;
+    height: 100%;
+    width: 60px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.options:hover{
+    background-color: #464646ad;
+}
+
+.dots{
+    --dot-height: 3.5px;
+    height: var(--dot-height);
+    width: var(--dot-height);
+    border-radius: 50%;
+    background-color: #fcfcfc;
+}
