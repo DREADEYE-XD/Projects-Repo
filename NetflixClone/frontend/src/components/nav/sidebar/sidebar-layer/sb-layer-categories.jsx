@@ -23,10 +23,10 @@ const SbLayerCategories = () => {
 
   return(
     <div className="sb-layer-categories">
-        <ul className="categories">
+        <ul className="categories" id="categories">
             <li className="home"><span>Home</span></li>
             {categories.map((value, index) => (
-                <li key={index} className="item"><span>{value}</span></li>
+                <li id='item' key={index} className="item"><span>{value}</span></li>
             ))}
         </ul>
     </div>

@@ -5,7 +5,28 @@
   --border-color: black;
   --font-color: #c7c4c4;
   color: var(--font-color);
+
 }
+
+/* div::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+div::-webkit-scrollbar-track {
+  background: var(--transparent0);
+  border-radius: 100vw;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: var(--grey1);
+  border-radius: 100vw;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: var(--grey0);
+} */
+
 .sidebar-icon {
   display: flex;
   flex-direction: column;
@@ -23,23 +44,41 @@
 
 .toggle {
   position: relative;
-  width: 35px;
-  height: 40px;
+  width: 24px;
+  height: 22px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 5px;
   transition-duration: 0.3s;
 }
 
 .bars {
   width: 100%;
-  height: 4px;
-  background-color: #fdfff3;
+  height: 3.5px;
+  background-color: var(--font-color);
   border-radius: 1px;
   transition-duration: 0.3s;
+}
+
+.icon-badge{
+  --badge-size: 21px;
+  position: absolute;
+  background-color: #e70303;
+  height: var(--badge-size);
+  width: var(--badge-size);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  top: 10px;
+  left: 34px;
+  border: 3.5px solid rgba(0, 0, 0, 0.74);
+  /* box-shadow:  -4px 3px 10px #000000,
+  5px -5px 10px #00000000; */
 }
 
 .sidebar-layer {
@@ -54,7 +93,6 @@
   z-index: 10;
   align-items: center;
   transition: 300ms ease;
-
 }
 
 .focusOff {
@@ -120,6 +158,10 @@
   border-radius: 50%;
 }
 
+.sb-layer-notifications img{
+  margin-right: 12px;
+}
+
 .sb-layer-downloads{
   display: flex;
   width: 100%;
@@ -134,15 +176,18 @@
 .sb-layer-categories {
   display: flex;
   width: 100%;
-  
+  overflow: auto;
 }
 
-.sb-layer-categories ul {
+
+
+#categories {
   flex-direction: column;
   width: 100%;
   height: auto;
   margin-top: 10px;
   align-items: center;
+  
 }
 
 .sb-layer-categories li {
@@ -163,26 +208,7 @@
   background-color: var(--categores-list-hover);
 }
 
-.sb-layer-categories li:active {
+.sb-layer-categories li:focus{
   font-weight: 600;
 }
 
-.sb-layer-categories ::-webkit-scrollbar {
-  width: 10px;
-  height: 20px;
-  background-color: #fdfff3;
-}
-
-.sb-layer-categories::-webkit-scrollbar-track {
-  background: #fdfff3;
-  border-radius: 100vw;
-}
-
-.sb-layer-categories::-webkit-scrollbar-thumb {
-  background: #c4c4c4;
-  border-radius: 100vw;
-}
-
-.sb-layer-categories::-webkit-scrollbar-thumb:hover {
-  background: #c4c4c4;
-}

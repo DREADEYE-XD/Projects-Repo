@@ -5,7 +5,7 @@ import SidebarLayer from "./sidebar-layer/sidebar-layer";
 
 const SideBar = () => {
 
-  const [focusStatus, setFocusStatus] = useState('focusOn');
+  const [focusStatus, setFocusStatus] = useState('focusOff');
   const sidebarRef = useRef(null);
 
   useEffect(() => {
