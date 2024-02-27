@@ -167,10 +167,13 @@ div::-webkit-scrollbar-thumb:hover {
   width: 100%;
   height: 60px;
   gap: 10px;
-  margin-left: 20px;
   justify-content: left;
   align-items: center;
   border-bottom: 2.5px solid var(--border-color);
+}
+
+.sb-layer-downloads img{
+  margin-left: 10px;
 }
 
 .sb-layer-categories {
