@@ -4,7 +4,7 @@ const Tiles = () => {
   return (
     <div className="trailer-cont">
       <div className="trailer-mv-name">
-        <span>Ted 2</span>
+        <span>Iron Man 3</span>
       </div>
 
       <div className="mv-cont">
@@ -31,7 +31,7 @@ const Tiles = () => {
           {`Tony Stark grapples with the consequences of the events 
       of The Avengers (2012) during a national terrorism
        campaign on the United States led by the mysterious
-        Mandarin2.`}
+        Mandarin.`}
         </span>
         </div>
       </div>
