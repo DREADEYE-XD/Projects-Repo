@@ -1,0 +1,99 @@
+.sections {
+  /* background-color: #44444462; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-top: 35px;
+}
+
+.continue-watching-cont {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+#tile-heading {
+  margin-left: 25px;
+  color: white;
+}
+
+.movie-tile-cont {
+  --component-size: 280px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  height: 250px;
+  width: var(--component-size);
+}
+
+#movie-img {
+  height: 180px;
+  width: var(--component-size);
+}
+
+.playButton {
+  position: absolute;
+  display: flex;
+  height: 180px;
+  width: var(--component-size);
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+#playButton {
+  height: 80px;
+  width: 80px;
+}
+
+.progressBar {
+  position: relative;
+  display: flex;
+  width: var(--component-size);
+  height: 3.5px;
+  background-color: #8d8d8d;
+  z-index: 9;
+}
+
+.progressCurrent {
+  position: relative;
+  display: flex;
+  width: 50px;
+  height: 3.5px;
+  background-color: #fa0000;
+  z-index: 9;
+}
+
+.movie-details-cont {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+}
+
+.movieDetails {
+  display: flex;
+  flex-direction: column;
+  width: var(--component-size);
+  gap: 2px;
+}
+
+#movieName {
+  color: white;
+  font-size: 19px;
+}
+
+#duration {
+  font-size: 16px;
+}
+
+#infoBtn {
+  height: 36px;
+  width: 36px;
+}

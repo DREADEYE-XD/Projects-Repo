@@ -7,8 +7,6 @@ const BgVideo = () => {
         autoPlay
         muted
         id="home-page-video"
-        height='600'
-        width='1500'
         
       >
         <source src="./videos/IM-trailer.mp4" type="video/mp4"/>
