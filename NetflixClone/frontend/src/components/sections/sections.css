@@ -4,11 +4,12 @@
   height: auto;
   display: flex;
   margin-top: 35px;
+  flex-direction: column;
 }
 
 .continue-watching-cont {
   width: 100%;
-  height: 320px;
+  height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +21,12 @@
 #tile-heading {
   margin-left: 25px;
   color: white;
+}
+
+.movie-tile-comp{
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .movie-tile-cont {
