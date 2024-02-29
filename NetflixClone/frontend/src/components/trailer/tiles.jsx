@@ -13,7 +13,7 @@ const Tiles = () => {
   return (
     <div className="trailer-cont">
       <div className="trailer-mv-name">
-        <span>Interstellar</span>
+        <span>Iron Man 3</span>
       </div>
 
       <div className="mv-cont">

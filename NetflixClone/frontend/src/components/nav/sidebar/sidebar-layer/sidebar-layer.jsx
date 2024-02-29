@@ -1,6 +1,7 @@
 import React from "react";
 import SbLayerAccounts from "./sb-layer-accounts";
 import SbLayerCategories from "./sb-layer-categories";
+import RightArrowIcon from "./right-arrow-icon";
 
 const SidebarLayer = (props) => {
   return (
@@ -13,7 +14,7 @@ const SidebarLayer = (props) => {
           <span>Notifications</span>
         </div>
 
-        <img src="./icons/right-arrow.png" alt="" height="24" width="22" />
+        <RightArrowIcon />
       </div>
 
       <div className="sb-layer-downloads">

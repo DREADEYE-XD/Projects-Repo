@@ -6,26 +6,7 @@
   --font-color: #c7c4c4;
   color: var(--font-color);
 
-}
-
-/* div::-webkit-scrollbar {
-  width: 10px;
-  height: 20px;
-}
-
-div::-webkit-scrollbar-track {
-  background: var(--transparent0);
-  border-radius: 100vw;
-}
-
-div::-webkit-scrollbar-thumb {
-  background: var(--grey1);
-  border-radius: 100vw;
-}
-
-div::-webkit-scrollbar-thumb:hover {
-  background: var(--grey0);
-} */
+} 
 
 .sidebar-icon {
   display: flex;
@@ -82,7 +63,7 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 .sidebar-layer {
-  position: absolute;
+  position: fixed;
   background-color: var(--sidebar-accent);
   top: 0;
   left: 0;
@@ -93,6 +74,8 @@ div::-webkit-scrollbar-thumb:hover {
   z-index: 10;
   align-items: center;
   transition: 300ms ease;
+  z-index: 50;
+  
 }
 
 .focusOff {
@@ -184,13 +167,33 @@ div::-webkit-scrollbar-thumb:hover {
 
 
 
+
 #categories {
   flex-direction: column;
   width: 100%;
   height: auto;
   margin-top: 10px;
   align-items: center;
-  
+  overflow-y: hidden; /* Change to auto */
+  scrollbar-width: thin; /* For Firefox */
+}
+
+#categories::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+#categories::-webkit-scrollbar-track {
+  background: var(--transparent0);
+}
+
+#categories::-webkit-scrollbar-thumb {
+  background: var(--grey1);
+  border-radius: 10px;
+}
+
+#categories::-webkit-scrollbar-thumb:hover {
+  background: var(--grey0);
 }
 
 .sb-layer-categories li {

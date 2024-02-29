@@ -1,5 +1,7 @@
 .sections {
   /* background-color: #44444462; */
+  --section-tile-margin-left: 10px;
+  --section-mv-tile-cont-mg-left: 15px;
   width: 100%;
   height: auto;
   display: flex;
@@ -19,7 +21,7 @@
 }
 
 #tile-heading {
-  margin-left: 25px;
+  margin-left: var(--section-tile-margin-left);
   color: white;
 }
 
@@ -31,7 +33,7 @@
 
 .movie-tile-cont {
   --component-size: 280px;
-  margin-left: 30px;
+  margin-left: var(--section-mv-tile-cont-mg-left);
   display: flex;
   flex-direction: column;
   background-color: #000000;
@@ -93,7 +95,7 @@
 
 #movieName {
   color: white;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 #duration {
@@ -104,3 +106,94 @@
   height: 36px;
   width: 36px;
 }
+
+.section-tiles{
+  
+  width: auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tile-header{
+  margin-left: var(--section-tile-margin-left);
+
+}
+
+.tile-header span{
+  color: white;
+}
+
+.section-category-mv-cont{
+  display: flex;
+  width: auto;
+  height: 250px;
+  gap: 10px;
+  margin-left: var(--section-mv-tile-cont-mg-left);
+  
+}
+
+.slider {
+  --slider-color: #25252589;
+  z-index: 12;
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  height: 250px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--slider-color);
+  transition: 200ms ease-in-out;
+}
+
+.slider:hover{
+  opacity: 1;
+}
+
+.leftArrow img{
+  transform: rotate(180deg);
+}
+
+.rightArrow {
+  display: flex;
+  background-color: var(--slider-color);
+  left: 97%;
+}
+
+.section-movie-tile-cont{
+  height: 250px;
+  width: 190px;
+  display: flex;
+}
+
+#section-mv-thumb{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.recentlyAddedBanner, .newEpisodeAvailable{
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  height: 250px;
+  width: 180px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.recentlyAddedBanner span, .newEpisodeAvailable span{
+  background-color: #fa0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 150px;
+  font-weight: 700;
+  color: white;
+  border-radius: 2px;
+}
+

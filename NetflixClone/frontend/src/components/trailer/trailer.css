@@ -3,7 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 90vh;
+  height: 95vh;
   width: 100vw;
   display: flex;
   align-items: flex-start;
@@ -89,11 +89,11 @@
 }
 
 #item1 {
-  padding: 8px 35px 8px 35px;
+  padding: 9px 35px 9px 35px;
 }
 
 #item2 {
-  padding: 8px 37px 8px 37px;
+  padding: 9px 37px 9px 37px;
 }
 
 .mv-desc {
@@ -102,11 +102,10 @@
 }
 
 .mv-desc span {
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 1px;
   color: white;
-  font-weight: 300;
-}
+  font-weight: 300;}
 
 .video-btns {
   display: flex;

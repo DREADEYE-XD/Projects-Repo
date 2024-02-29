@@ -33,13 +33,15 @@ body {
   --transparent0: hsla(120, 75%, 50%, 0);
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar{
+  opacity: 0;
   z-index: 10;
   width: 10px;
   height: 20px;
 }
 
 body::-webkit-scrollbar-track {
+  opacity: 0;
   z-index: inherit;
   background: var(--transparent0);
   border-radius: 100vw;
@@ -47,10 +49,9 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   z-index: inherit;
+  opacity: 0;
   background: var(--grey1);
   border-radius: 100vw;
 }
 
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--grey0);
-}
+

@@ -1,23 +1,36 @@
 import React from "react";
+import CategoryMvTiles from "./category-mv-tiles";
+import RightArrowIcon from "../nav/sidebar/sidebar-layer/right-arrow-icon";
 
-const SectionTiles = ({tileHeading, movieThumbnail, recentlyAdded, newEpisodeAvailable}) => {
+const SectionTiles = ({
+  categoryHeading,
+  movieThumbnail,
+  recentlyAdded,
+  newEpisodeAvailable,
+}) => {
   return (
     <div className="section-tiles">
       <div className="tile-header">
-        <span>{tileHeading}</span>
+        <span>{categoryHeading}</span>
       </div>
 
-      <div className="movie-tile-cont">
-        <img src={movieThumbnail} alt="" />
-        {recentlyAdded ? (
-          <div className="recentlyAddedBanner">
-            <span>Reccently Added</span>
-          </div>
-        ) : newEpisodeAvailable ? (
-          <div className="newEpisodeAvailable">
-            <span>New Episode</span>
-          </div>
-        ) : null}
+      <div className="section-category-mv-cont">
+        <div className="slider leftArrow">
+          <RightArrowIcon/>
+        </div>
+
+        {movieThumbnail.map((value, index) => (
+          <CategoryMvTiles
+            key={index}
+            movieThumbnail={value}
+            recentlyAdded={recentlyAdded}
+            newEpisodeAvailable={newEpisodeAvailable}
+          />
+        ))}
+
+        <div className="slider rightArrow">
+        <RightArrowIcon/>
+        </div>
       </div>
     </div>
   );
