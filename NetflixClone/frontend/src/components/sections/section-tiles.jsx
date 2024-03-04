@@ -4,10 +4,15 @@ import RightArrowIcon from "../nav/sidebar/sidebar-layer/right-arrow-icon";
 
 const SectionTiles = ({
   categoryHeading,
-  movieThumbnail,
   recentlyAdded,
   newEpisodeAvailable,
+  popularMovie,
+imageUrl
 }) => {
+  
+  
+
+
   return (
     <div className="section-tiles">
       <div className="tile-header">
@@ -19,12 +24,13 @@ const SectionTiles = ({
           <RightArrowIcon/>
         </div>
 
-        {movieThumbnail.map((value, index) => (
+        {popularMovie.map((movie, index) => (
           <CategoryMvTiles
             key={index}
-            movieThumbnail={value}
+            movieThumbnail={imageUrl + movie.backdrop_path}
             recentlyAdded={recentlyAdded}
             newEpisodeAvailable={newEpisodeAvailable}
+            movieName={movie.original_title}
           />
         ))}
 

@@ -16,14 +16,14 @@ const ContinueWatching = () => {
 
         <MovieTile
           movieThumbnail="./images/movie-tiles/wolverine.jpg"
-          progress={120}
+          progress={34}
           movieName="Wolverine"
           movieDuration="2hr 38min"
         />
 
         <MovieTile
           movieThumbnail="./images/movie-tiles/darkKnight.jpg"
-          progress={120}
+          progress={170}
           movieName="The Dark Knight"
           movieDuration="2hr 10min"
         />

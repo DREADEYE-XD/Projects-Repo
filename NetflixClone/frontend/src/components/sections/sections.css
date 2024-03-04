@@ -132,7 +132,7 @@
   height: 250px;
   gap: 10px;
   margin-left: var(--section-mv-tile-cont-mg-left);
-  
+  overflow: hidden;
 }
 
 .slider {
@@ -165,15 +165,43 @@
 
 .section-movie-tile-cont{
   height: 250px;
-  width: 190px;
+  width: 180px;
   display: flex;
 }
 
 #section-mv-thumb{
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   object-fit: cover;
 }
+
+.section-mv-name{
+  opacity: 0;
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  flex-wrap: wrap;
+  height: 250px;
+  width: 180px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #00000091;
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0px 0px 54px 10px rgba(0,0,0,0.48);
+  transition: 300ms ease-in-out;
+}
+
+.section-mv-name:hover{
+  opacity: 1;
+}
+
+.section-mv-name span{
+  color: white;
+  font-weight: 800;
+  font-size: 28px;
+}
+
 
 .recentlyAddedBanner, .newEpisodeAvailable{
   position: absolute;

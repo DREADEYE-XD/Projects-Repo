@@ -1,12 +1,11 @@
-* {
+*{
   --sidebar-accent: #161616;
   --sb-accounts: #181818;
   --categores-list-hover: #464646ad;
   --border-color: black;
   --font-color: #c7c4c4;
   color: var(--font-color);
-
-} 
+}
 
 .sidebar-icon {
   display: flex;
@@ -16,7 +15,6 @@
   justify-content: center;
   align-items: center;
   margin-left: 30px;
-  
 }
 
 #checkbox {
@@ -44,7 +42,7 @@
   transition-duration: 0.3s;
 }
 
-.icon-badge{
+.icon-badge {
   --badge-size: 21px;
   position: absolute;
   background-color: #e70303;
@@ -75,7 +73,6 @@
   align-items: center;
   transition: 300ms ease;
   z-index: 50;
-  
 }
 
 .focusOff {
@@ -105,7 +102,7 @@
   margin-left: 10px;
 }
 
-.user-cont span{
+.user-cont span {
   color: white;
 }
 
@@ -117,7 +114,7 @@
   cursor: pointer;
 }
 
-.sb-layer-notifications{
+.sb-layer-notifications {
   display: flex;
   width: 100%;
   height: 50px;
@@ -126,14 +123,14 @@
   border-bottom: 2.5px solid var(--border-color);
 }
 
-.notfication-cont{
+.notfication-cont {
   display: flex;
   align-items: center;
   gap: 5px;
   margin-left: 10px;
 }
 
-.notif-badge{
+.notif-badge {
   --badgge-size: 8px;
   width: var(--badgge-size);
   height: var(--badgge-size);
@@ -141,11 +138,11 @@
   border-radius: 50%;
 }
 
-.sb-layer-notifications img{
+.sb-layer-notifications img {
   margin-right: 12px;
 }
 
-.sb-layer-downloads{
+.sb-layer-downloads {
   display: flex;
   width: 100%;
   height: 60px;
@@ -155,18 +152,14 @@
   border-bottom: 2.5px solid var(--border-color);
 }
 
-.sb-layer-downloads img{
+.sb-layer-downloads img {
   margin-left: 10px;
 }
 
 .sb-layer-categories {
   display: flex;
   width: 100%;
-  overflow: auto;
 }
-
-
-
 
 #categories {
   flex-direction: column;
@@ -174,8 +167,9 @@
   height: auto;
   margin-top: 10px;
   align-items: center;
-  overflow-y: hidden; /* Change to auto */
-  scrollbar-width: thin; /* For Firefox */
+  top: 0;
+  bottom: 0;
+
 }
 
 #categories::-webkit-scrollbar {
@@ -184,16 +178,16 @@
 }
 
 #categories::-webkit-scrollbar-track {
-  background: var(--transparent0);
+  background-color: bisque;
 }
 
 #categories::-webkit-scrollbar-thumb {
-  background: var(--grey1);
+  background-color: #c7c4c4;
   border-radius: 10px;
 }
 
 #categories::-webkit-scrollbar-thumb:hover {
-  background: var(--grey0);
+  background: #c7c4c4;
 }
 
 .sb-layer-categories li {
@@ -214,7 +208,6 @@
   background-color: var(--categores-list-hover);
 }
 
-.sb-layer-categories li:focus{
+.sb-layer-categories li:focus {
   font-weight: 600;
 }
-
