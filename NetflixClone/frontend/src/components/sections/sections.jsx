@@ -6,23 +6,13 @@ import axios from "axios";
 import { genreList } from "./genreList";
 
 const Sections = () => {
-  const movieImages = [
-    "./images/movie-tiles/avatar.jpg",
-    "./images/movie-tiles/batman.jpg",
-    "./images/movie-tiles/hulk.jpg",
-    "./images/movie-tiles/ironman.jpg",
-    "./images/movie-tiles/pacific-rim.jpg",
-    "./images/movie-tiles/spiderman.jpg",
-    "./images/movie-tiles/superman.jpg",
-    "./images/movie-tiles/world-warz.jpg",
-  ];
 
   const baseUrl = "https://api.themoviedb.org/3/";
   const popularMovieUrl = "movie/popular?language=en-US&page=1";
   const topRatedMovieUrl = "movie/top_rated?language=en-US&page=1";
   const upcomingMovieUrl = "movie/upcoming?language=en-US&page=1";
   const movieSearchWithGenreUrl =
-    "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28%2C%2053%2C%2081";
+    "discover/movie?include_adult=true&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=";
   const imageUrl = "https://image.tmdb.org/t/p/w500";
   const [popularMovie, setPopularMovie] = useState({});
   const [topRatedMovie, setTopRatedMovie] = useState({});
@@ -100,6 +90,8 @@ const Sections = () => {
           console.log(error);
         });
     }
+
+   movieFinderWithGenre('28%2C%2053');
   }, []);
 
   console.log(popularMovie);
