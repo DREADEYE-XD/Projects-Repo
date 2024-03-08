@@ -1,13 +1,15 @@
 import React from "react";
 
 const CategoryMvTiles = ({
+  sliderPosition,
   movieThumbnail,
   movieName,
   recentlyAdded,
   newEpisodeAvailable,
 }) => {
+  
   return (
-    <div className="section-movie-tile-cont">
+    <div className="section-movie-tile-cont" style={{transform: `translateX(${sliderPosition})`}}>
       <img id="section-mv-thumb" src={movieThumbnail} alt="" />
       <div className="section-mv-name"> <span>{movieName}</span></div>
       {recentlyAdded ? (

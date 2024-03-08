@@ -133,6 +133,7 @@
   gap: 10px;
   margin-left: var(--section-mv-tile-cont-mg-left);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .slider {
@@ -167,6 +168,9 @@
   height: 250px;
   width: 180px;
   display: flex;
+  transition: 300ms ease-in-out;
+  /* transform: translateX(-1520px); */
+  
 }
 
 #section-mv-thumb{
@@ -189,6 +193,7 @@
   background-color: #00000049;
   box-shadow: inset 0px 0px 14px 5px #00000022;
   transition: 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .section-mv-name:hover{
