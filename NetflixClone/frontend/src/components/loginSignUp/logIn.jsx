@@ -1,37 +1,47 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const LogIn = ({setToggleLoginSignUp, setAuthentication}) => {
+const LogIn = ({ setToggleLoginSignUp }) => {
 
-  console.log(setAuthentication);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const username = e.target.elements.username.value;
+    const password = e.target.elements.password.value;
+
+    if (username === "admin" && password === "admin@123") {
+      navigate("/", {replace: true});
+    } else {
+      // Handle incorrect username or password
+    }
+  };
 
   return (
     <div className="login-form-design">
       <span id="lg-header">Sign In</span>
-      <input
-        className="inputs"
-        id="lg-usname"
-        type="text"
-        placeholder="Username"
-        onChange={(e)=>{
-          if(e.target.value==='admin'){
-            setAuthentication({login: true});
-          }
-        }}
-      />
-      <input
-        className="inputs"
-        id="lg-pass"
-        type="password"
-        placeholder="Password"
-        onChange={(e)=>{
-          if(e.target.value==='admin@123'){
-            setAuthentication({pswdStat: true});
-          }
-        }}
-      />
-      <button className="submit-btn" type="submit">
-        <span>Sign In</span>
-      </button>
+      <form id="loginForm" onSubmit={handleSubmit}>
+        <input
+          className="inputs"
+          id="lg-usname"
+          type="text"
+          placeholder="Username"
+          name="username"
+        />
+        <input
+          className="inputs"
+          id="lg-pass"
+          type="password"
+          placeholder="Password"
+          name="password"
+        />
+        <button
+          className="submit-btn"
+          type="submit"
+        >
+          <span>Sign In</span>
+        </button>
+      </form>
 
       <div className="helper-cont">
         <input type="checkbox" id="lg-checkbox" />
@@ -41,7 +51,14 @@ const LogIn = ({setToggleLoginSignUp, setAuthentication}) => {
 
       <div className="switch-to-signUp">
         <span>New to Netflix?</span>
-        <span style={{marginLeft: '5px', color: "white", cursor: 'pointer'}} onClick={()=>{setToggleLoginSignUp(true)}}>Sign up now</span>
+        <span
+          style={{ marginLeft: "5px", color: "white", cursor: "pointer" }}
+          onClick={() => {
+            setToggleLoginSignUp(true);
+          }}
+        >
+          Sign up now
+        </span>
       </div>
 
       <div className="info">
