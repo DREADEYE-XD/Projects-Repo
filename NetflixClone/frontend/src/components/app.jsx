@@ -1,16 +1,15 @@
 import React from "react";
-import Nav from "./nav/nav";
 import "./app.css";
-import Trailer from "./trailer/trailer";
-import Sections from "./sections/sections";
-
+import { Routes, Route} from "react-router-dom"
+import Home from "./home/home";
+import LoginPage from "./loginSignUp/loginPage";
 const App = () => {
   return (
-    <>
-      <Nav />
-      <Trailer/>
-      <Sections />
-    </>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/login" element={<LoginPage/>}/>
+
+    </Routes>
   );
 };
 

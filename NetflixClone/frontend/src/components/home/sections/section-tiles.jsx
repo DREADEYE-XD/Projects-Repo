@@ -20,7 +20,7 @@ const SectionTiles = ({
   const handleLeftArrowClick = () => {
     if (sliderWidth >= 0) {
       setCount((count = count - 1));
-      setSliderPosition(`${sliderWidth - width}px`);
+      setSliderPosition(`-${sliderWidth - width}px`);
       setSliderWidth(sliderWidth - width);
     }
   };
@@ -45,7 +45,7 @@ const SectionTiles = ({
         <div
           className="slider leftArrow"
           onClick={handleLeftArrowClick}
-          style={{ display: sliderPosition === "0px" ? "none" : "flex" }}
+          style={{ visibility: sliderWidth === 0 ? "hidden" : "visible" }}
         >
           <RightArrowIcon />
         </div>

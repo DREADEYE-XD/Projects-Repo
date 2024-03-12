@@ -1,0 +1,122 @@
+#login-page-body{
+    display: flex;
+    height: 87vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.background-img{
+    z-index: -100;
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#lg-bg-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.loginFormOuter{
+    background-color: #1f1f1ff1;
+    width: 450px;
+    height: 550px;
+    
+}
+.loginFormInner{
+    margin: 10% auto;
+    width: 350px;
+    height: 500px;
+}
+
+#lg-header{
+    font-weight: 600;
+    font-size: 32px;
+    color: #ffffff;
+}
+.login-form-design, .signUp-form-design{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#eye{
+    position: absolute;
+    top: 39.5%;
+    left: 57.5%;
+    cursor: pointer;
+}
+
+.inputs{
+    margin-top: 20px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    color: #ebebeb;
+    background-color: #333333;
+    text-indent: 20px;
+    font-size: 18px;
+    outline: none;
+}
+
+.inputs:focus{
+    outline: 1px solid red;
+}
+
+.submit-btn{
+    cursor: pointer;
+    margin-top: 40px;
+    height: 60px;
+    color: white;
+    background-color: red;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.helper-cont{
+    display: flex;
+    width: 100%;
+    height: 45px;
+    align-items:  center;
+}
+
+#lg-checkbox{
+    outline: none;
+    height: 15px;
+    width: 15px;
+    align-self: center;
+}
+
+#rememberMe{
+    margin-left: 5px;
+}
+
+#needHelp{
+    margin-left: 135px;
+}
+
+.switch-to-signUp{
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+.switch-to-signUp{
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+.info{
+    margin-top: 60px;
+    margin-left: 15px;
+    display: flex;
+}
