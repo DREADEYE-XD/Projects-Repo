@@ -1,20 +1,52 @@
-.options{
-    display: flex;
-    height: 100%;
-    width: 60px;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
+.options {
+  display: flex;
+  height: 100%;
+  width: 60px;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-.options:hover{
-    background-color: #464646ad;
+.options:hover {
+  background-color: #464646ad;
 }
 
-.dots{
-    --dot-height: 3.5px;
-    height: var(--dot-height);
-    width: var(--dot-height);
-    border-radius: 50%;
-    background-color: #fcfcfc;
+.dots {
+  --dot-height: 3.5px;
+  height: var(--dot-height);
+  width: var(--dot-height);
+  border-radius: 50%;
+  background-color: #fcfcfc;
+}
+
+.option-layer {
+  position: absolute;
+  right: 0;
+  top: 6%;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100px;
+  background-color: #464646;
+  justify-items: center;
+  align-items: center;
+}
+
+.optn-layer-items {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  height: 50%;
+}
+
+.optn-layer-items span {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.optn-layer-items:hover {
+  background-color: #1d1d1dad;
 }

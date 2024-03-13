@@ -3,6 +3,7 @@ import ContinueWatching from "./continue-watching";
 import "./sections.css";
 import SectionTiles from "./section-tiles";
 import axios from "axios";
+import ShowMovieDetials from "../../miscPages/showMovieDetails/showMovieDetials";
 // import { genreList } from "./genreList";
 
 const Sections = () => {
@@ -156,29 +157,7 @@ const Sections = () => {
           </section>
         ))}
 
-      {/* <section>
-        <SectionTiles 
-          categoryHeading="Action Thrillers"
-          movieData={movieFinderData.actionThriller}
-        />
-      </section>
-      <SectionTiles 
-          categoryHeading="Action Thrillers"
-          movieData={movieFinderData.actionThriller}
-        />
-      <section>
-      <SectionTiles 
-          categoryHeading="Action Thrillers"
-          movieData={movieFinderData.actionThriller}
-        />
-      </section>
-      
-      <section>
-      <SectionTiles 
-          categoryHeading="Action Thrillers"
-          movieData={movieFinderData.actionThriller}
-        />
-      </section> */}
+      <ShowMovieDetials />
     </div>
   );
 };

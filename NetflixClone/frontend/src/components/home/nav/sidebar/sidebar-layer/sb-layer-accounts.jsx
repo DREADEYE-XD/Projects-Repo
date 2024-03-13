@@ -5,7 +5,7 @@ const SbLayerAccounts = () => {
     <div className='sb-layer-accounts'>
         <div className="user-cont">
         <img src="./images/userAvatar.png" alt="" cla0ssName="userAvatar" height='58' width='58' />
-        <span className="userName">Shreyansh</span>
+        <span className="userName">Admin</span>
         </div>
         
         <button id='switch-user' >

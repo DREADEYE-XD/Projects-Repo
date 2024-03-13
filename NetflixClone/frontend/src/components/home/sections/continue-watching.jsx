@@ -4,7 +4,7 @@ import MovieTile from "./movie-tile";
 const ContinueWatching = () => {
   return (
     <div className="continue-watching-cont">
-      <span id="tile-heading">Continue Watching for Shreyansh</span>
+      <span id="tile-heading">Continue Watching for Admin</span>
 
       <div className="movie-tile-comp">
         <MovieTile
