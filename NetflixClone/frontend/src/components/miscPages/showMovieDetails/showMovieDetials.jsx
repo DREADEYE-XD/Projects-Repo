@@ -1,6 +1,7 @@
 import React from 'react'
 import SmdMovieTrailer from './smd-movie-trailer'
 import SmdMovieAbout from './smd-movie-about'
+import SmdMoreMovies from './smd-more-movies'
 
 const ShowMovieDetials = () => {
   return (
@@ -8,8 +9,7 @@ const ShowMovieDetials = () => {
       <div className="movieDetails-cont">
         <SmdMovieTrailer />
         <SmdMovieAbout />
-        {/* More Movies like this */}
-
+        <SmdMoreMovies />
       </div>
     </div>
   )

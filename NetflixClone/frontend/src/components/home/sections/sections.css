@@ -244,6 +244,7 @@
   margin: 10% auto;
   height: 850px;
   width: 650px;
+  overflow: hidden;
 }
 
 .SmdMovieTrailer {
@@ -295,7 +296,7 @@
 
 .smdMA-about-cont{
   width: 650px;
-  height: 300px;
+  height: 200px;
   z-index: 1000000005;
   display: flex;
   flex-direction: column;
@@ -332,7 +333,7 @@
 
 .smdMAA-aboutMov-cont{
   width: 100%;
-  height: 80px;
+  height: 90px;
   text-indent: 50px;
 }
 
@@ -343,4 +344,31 @@
 
 .smdMAA-cast{
   margin-top: 30px;
+}
+
+.smdMA-actn-btns{
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  margin-left: 50px;
+  gap: 30px;
+  height: 70px;
+}
+
+.smdMA-similarMovs-cont{
+  background-color: #8d8d8d;
+  width: 550px;
+  height: 400px;
+  margin-left: 50px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 270px) ;
+  grid-template-rows: repeat(6, 150px);
+  gap: 10px;
+}
+
+.testMov{
+  width: 100%;
+  height: 100%;
+  background-color: #424242;
 }

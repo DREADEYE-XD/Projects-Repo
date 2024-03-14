@@ -13,7 +13,7 @@ const SmdMovieAbout = () => {
       </div>
 
       <div className="smdMAA-aboutMov-cont">
-        <p className="smdMA-about">This is about</p>
+        <p className="smdMAA-about">This is about</p>
         <p className="smdMAA-cast">
           Cast: <span>abc, nys, oasdf</span>
         </p>
@@ -21,10 +21,12 @@ const SmdMovieAbout = () => {
       </div>
 
       <div className="smdMA-actn-btns">
-        <img src="" alt="" className="addtoList" />
-        <img src="" alt="" className="rateMovie" />
-        <img src="" alt="" className="downloadMv" />
+        <img src="./icons/plus.png" alt="Add to list" className="addtoList" height="40" width='40' />
+        <img src="./icons/thumbUp.png" alt="" className="rateMovie" height="40" width='40' />
+        <img src="./icons/download.png" alt="" className="downloadMv" height="40" width='30' />
       </div>
+
+      
     </div>
   );
 };
