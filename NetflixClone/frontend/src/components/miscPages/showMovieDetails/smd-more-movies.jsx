@@ -1,19 +1,28 @@
-import React from 'react'
+import React from "react";
+// import SmdMoreMvTiles from "./smd-more-mv-tiles";
 
-const SmdMoreMovies = () => {
-  return (
-    <div className="smdMA-similarMovs-cont">
-        <div className="testMov">1</div>
-        <div className="testMov">2</div>
-        <div className="testMov">3</div>
-        <div className="testMov">4</div>
-        <div className="testMov">5</div>
-        <div className="testMov">6</div>
-        <div className="testMov"></div>
-        <div className="testMov"></div>
-        <div className="testMov"></div>
-    </div>
-  )
+const SmdMoreMovies = ({ movieData }) => {
+  const imageUrl = "https://image.tmdb.org/t/p/w500";
+
+if(movieData){
+  console.log(movieData);
 }
 
-export default SmdMoreMovies
+  return (
+    <div className="smdMA-similarMovs-cont">
+      {movieData &&
+        Object.keys(movieData).length > 0 &&
+        Object.keys(movieData).length < 9 &&
+        Object.keys(movieData).map((movie, index) => (
+          <div key={index} className="smdMoreMvTiles-cont">
+            <img src={imageUrl + movie.backdrop_path} alt="" />
+            <div className="smdMoreMvTiles-layer">
+              <span>{movie.original_title}</span>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+};
+
+export default SmdMoreMovies;

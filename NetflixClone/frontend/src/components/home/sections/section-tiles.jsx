@@ -7,6 +7,8 @@ const SectionTiles = ({
   recentlyAdded,
   movieData,
   newEpisodeAvailable,
+  setToggleShowMovieDetails,
+  setMovieID
 }) => {
   let [count, setCount] = useState(0);
   const [sliderPosition, setSliderPosition] = useState("0px");
@@ -31,10 +33,6 @@ const SectionTiles = ({
     setSliderWidth(width * count);
   };
 
-  console.log("Count:" + count);
-  console.log(sliderPosition);
-  console.log("SliderWidth: " + sliderWidth);
-
   return (
     <div className="section-tiles">
       <div className="tile-header">
@@ -55,11 +53,13 @@ const SectionTiles = ({
           movieData.map((movie, index) => (
             <CategoryMvTiles
               key={index}
-              movieThumbnail={imageUrl + movie.backdrop_path}
+              movieID={movie.id}
+              movieThumbnail={imageUrl + movie.poster_path}
               recentlyAdded={recentlyAdded}
               newEpisodeAvailable={newEpisodeAvailable}
-              movieName={movie.original_title}
               sliderPosition={sliderPosition}
+              setToggleShowMovieDetails={setToggleShowMovieDetails}
+              setMovieID={setMovieID}
             />
           ))}
 

@@ -1,18 +1,35 @@
-import React from 'react'
-import SmdMovieTrailer from './smd-movie-trailer'
-import SmdMovieAbout from './smd-movie-about'
-import SmdMoreMovies from './smd-more-movies'
+import React, { useState } from "react";
+import SmdMovieTrailer from "./smd-movie-trailer";
+import SmdMovieAbout from "./smd-movie-about";
+import axios from "axios";
 
-const ShowMovieDetials = () => {
+const ShowMovieDetials = ({ setToggleShowMovieDetails, movieID }) => {
+  const imageUrl = "https://image.tmdb.org/t/p/w500";
+  const [thumbnail, setThumbnail] = useState("");
+
+  if (movieID) {
+    console.log(movieID);
+  }
+
+  
+
   return (
-    <div className='showMovieDetails' >
+    <div className="showMovieDetails">
+      <div className="cancel-btn">
+        <img
+          onClick={() => {
+            setToggleShowMovieDetails(false);
+          }}
+          src="./icons/cancel.png"
+          alt=""
+        />
+      </div>
       <div className="movieDetails-cont">
         <SmdMovieTrailer />
         <SmdMovieAbout />
-        <SmdMoreMovies />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ShowMovieDetials
+export default ShowMovieDetials;

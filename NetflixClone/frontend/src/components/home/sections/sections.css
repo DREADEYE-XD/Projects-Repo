@@ -236,13 +236,29 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.cancel-btn{
+  margin-left: 32%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancel-btn:hover{
+  background-color: #8d8d8d;
+}
+
 .movieDetails-cont {
   background-color: #201f1f;
-  margin: 10% auto;
-  height: 850px;
+  height: 550px;
   width: 650px;
   overflow: hidden;
 }
@@ -355,7 +371,7 @@
   height: 70px;
 }
 
-.smdMA-similarMovs-cont{
+/* .smdMA-similarMovs-cont{
   background-color: #8d8d8d;
   width: 550px;
   height: 400px;
@@ -367,8 +383,24 @@
   gap: 10px;
 }
 
-.testMov{
+.smdMoreMvTiles-cont{
+  display: flex;
   width: 100%;
   height: 100%;
   background-color: #424242;
 }
+
+.smdMoreMvTiles-cont img{
+  height: 100%;
+  width: 100%;
+}
+
+.smdMoreMvTiles-layer{
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 270px;
+  width: 150px;
+  background-color: #1fbd00;
+} */

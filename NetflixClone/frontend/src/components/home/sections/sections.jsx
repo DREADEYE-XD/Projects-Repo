@@ -26,6 +26,9 @@ const Sections = () => {
     Romance: {},
   });
 
+  const [toggleShowMovieDetails, setToggleShowMovieDetails] = useState(false);
+  const [movieID, setMovieID] = useState(0);
+
   // Fetch popular movies data
   useEffect(() => {
     axios
@@ -38,7 +41,7 @@ const Sections = () => {
       })
       .then(async (response) => {
         const data = response.data.results;
-        
+
         setPopularMovie(data);
       })
       .catch((error) => {
@@ -55,7 +58,7 @@ const Sections = () => {
       })
       .then(async (response) => {
         const data = response.data.results;
-        
+
         setTopRatedMovie(data);
       })
       .catch((error) => {
@@ -72,7 +75,7 @@ const Sections = () => {
       })
       .then(async (response) => {
         const data = response.data.results;
-      
+
         setUpcomingMovie(data);
       })
       .catch((error) => {
@@ -125,6 +128,8 @@ const Sections = () => {
           recentlyAdded={false}
           newEpisodeAvailable={false}
           movieData={popularMovie}
+          setToggleShowMovieDetails={setToggleShowMovieDetails}
+          setMovieID={setMovieID}
         />
       </section>
 
@@ -134,6 +139,8 @@ const Sections = () => {
           recentlyAdded={false}
           newEpisodeAvailable={true}
           movieData={topRatedMovie}
+          setToggleShowMovieDetails={setToggleShowMovieDetails}
+          setMovieID={setMovieID}
         />
       </section>
 
@@ -142,22 +149,33 @@ const Sections = () => {
           categoryHeading="Upcoming Movies"
           recentlyAdded={true}
           newEpisodeAvailable={false}
+          setToggleShowMovieDetails={setToggleShowMovieDetails}
           movieData={upcomingMovie}
+          setMovieID={setMovieID}
         />
       </section>
 
       {movieFinderData &&
         Object.keys(movieFinderData).length > 0 &&
         Object.keys(movieFinderData).map((genre, index) => (
-          <section key={index}>
-            <SectionTiles
-              categoryHeading={genre}
-              movieData={movieFinderData[genre]}
-            />
-          </section>
+          <>
+            <section key={index}>
+              <SectionTiles
+                categoryHeading={genre}
+                movieData={movieFinderData[genre]}
+                setToggleShowMovieDetails={setToggleShowMovieDetails}
+                setMovieID={setMovieID}
+              />
+            </section>
+          </>
         ))}
 
-      <ShowMovieDetials />
+      {toggleShowMovieDetails ? (
+        <ShowMovieDetials
+          movieID={movieID}
+          setToggleShowMovieDetails={setToggleShowMovieDetails}
+        />
+      ) : null}
     </div>
   );
 };

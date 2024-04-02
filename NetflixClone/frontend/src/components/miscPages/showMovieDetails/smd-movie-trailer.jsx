@@ -1,6 +1,6 @@
 import React from "react";
 
-const SmdMovieTrailer = () => {
+const SmdMovieTrailer = ({thumbnail}) => {
   return (
     <div className="SmdMovieTrailer">
       <div className="smdMT-trailer-vid">
