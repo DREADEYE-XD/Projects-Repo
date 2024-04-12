@@ -1,0 +1,3 @@
+["(ctrl-0) Component", "coda", "exited after very short runtime(7 sec is smaller than 60)"],
+["(ctrl-209) Component", "coda", "exited with", "139",  "automatic restart limit exceeded. Use ", "ovc -start coda"],
+["blfeprd2 portmonitoring 8443 Metric", "status", "changed status from", "good", "to", "error"]
