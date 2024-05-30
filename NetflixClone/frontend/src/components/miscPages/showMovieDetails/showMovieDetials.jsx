@@ -6,11 +6,7 @@ import axios from "axios";
 const ShowMovieDetials = ({ setToggleShowMovieDetails, movieID }) => {
   const imageUrl = "https://image.tmdb.org/t/p/w500";
   const [thumbnail, setThumbnail] = useState("");
-
-  if (movieID) {
-    console.log(movieID);
-  }
-
+  
   
 
   return (
