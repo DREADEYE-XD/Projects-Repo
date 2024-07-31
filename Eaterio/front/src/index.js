@@ -14,6 +14,7 @@ import Pastas from "./components/menu/pastas";
 import Burgers from "./components/menu/burgers";
 import Pizzas from "./components/menu/pizzas";
 import Product from "./pages/product";
+import { CartProvider } from "./lib/cartContext";
 
 const router = createBrowserRouter([
   {
@@ -65,7 +66,6 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
-
     ],
   },
 ]);
@@ -73,6 +73,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
