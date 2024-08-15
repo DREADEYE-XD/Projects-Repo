@@ -14,7 +14,7 @@ const SlideShow = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center h-[calc(100vh-5rem)] md:h-[calc(100vh-8rem)]">
-      <div className="flex flex-col justify-center items-center h-1/2 w-full lg:h-full lg:w-1/2 gap-5 bg-slate-200">
+      <div className="flex flex-col justify-center items-center h-1/2 w-full lg:h-full lg:w-1/2 gap-5 bg-slate-50">
         <span className="flex text-center w-11/12 text-red-500 text-5xl font-bold">
           {slideData[currentSlide].title}
         </span>

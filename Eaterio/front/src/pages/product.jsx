@@ -6,30 +6,25 @@ import { useCart } from "../lib/cartContext";
 
 const Product = () => {
   const { category, id } = useParams();
-  const [itemSize, setItemSize] = useState("Small");
+  const [itemSize, setItemSize] = useState("Regular");
   const [itemQuantity, setItemQuantity] = useState(1);
   const [itemPrice, setItemPrice] = useState(0);
-  const [itemTotalPrice, setItemTotalPrice] = useState(itemPrice);
+  const [itemTotalPrice, setItemTotalPrice] = useState(0);
   const [itemAddedVisibility, setItemAddedVisibility] = useState(false);
-
-  //Implemeting useCart() for adding items to the cart.
   const { addToCart } = useCart();
 
-  const handleAddToCart = () => {
-    addToCart(
-      {
-        id: item.id,
-        title: item.title,
-        size: itemSize,
-        price: itemTotalPrice,
-        img: item.img,
-      },
-      itemQuantity
-    );
-  };
-
   const handleItemAddedToCart = () => {
-    setItemAddedVisibility(true)
+    addToCart({
+      id: item.id,
+      title: item.title,
+      size: itemSize,
+      quantity: itemQuantity,
+      price: itemPrice,
+      totalPrice: itemTotalPrice,
+      img: item.img,
+      category: category,
+    });
+    setItemAddedVisibility(true);
     setItemQuantity(1);
   };
 
@@ -60,6 +55,7 @@ const Product = () => {
   useEffect(() => {
     //Setting the default price of the item, picked up from the database
     setItemPrice(item.price);
+    setItemTotalPrice(itemPrice);
 
     if (itemQuantity > 1) {
       setItemTotalPrice(Math.round(itemPrice * itemQuantity * 100) / 100);
@@ -119,7 +115,11 @@ const Product = () => {
             setItemSize={setItemSize}
           />
         ) : (
-          <></>
+          <ul className="flex gap-6 items-center [&>*]:cursor-pointer">
+            <li className="border-[1px] border-red-500 rounded px-3 py-[3px] bg-red-500 text-white">
+              Regular
+            </li>
+          </ul>
         )}
         <div className="flex gap-3 items-center ">
           <div className="flex justify-between gap-3 border-[1px] px-3 py-[3px] border-red-500 w-1/2">
@@ -147,7 +147,6 @@ const Product = () => {
           <button
             className="px-5 py-1 text-white bg-red-500 hover:bg-red-700"
             onClick={() => {
-              handleAddToCart();
               handleItemAddedToCart();
             }}
           >

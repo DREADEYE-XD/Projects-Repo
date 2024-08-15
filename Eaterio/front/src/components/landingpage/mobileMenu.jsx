@@ -4,13 +4,24 @@ import { NavLink } from "react-router-dom";
 const MobileMenu = () => {
   const [menuClick, setMenuClick] = useState(true);
 
+  const handleMenuClick=()=>{
+    setMenuClick(true)
+  }
+
+  const navLinkStyles = ({isActive}) => ({
+    fontWeight: isActive ? "bold" : "",
+    color: isActive ? "red" : "grey",
+    listStyleType: isActive ? "circle" : "none",
+    display: "inline-block",
+    width: "100%",
+    padding: "10px 0",
+  });
+
   return (
-    <div className="md:hidden max-md:p-2">
+    <div className="md:hidden max-md:p-2 z-10">
       <button
         onClick={() => {
-          if (!menuClick) {
-            setMenuClick(true);
-          } else setMenuClick(false);
+          setMenuClick(!menuClick);
         }}
       >
         {menuClick ? (
@@ -22,16 +33,13 @@ const MobileMenu = () => {
       {menuClick ? (
         <></>
       ) : (
-        <ul className="flex flex-col justify-center items-center absolute top-32 right-10 text-black border border-red-500 bg-white w-36 h-44 text-sm gap-2 [&>*]:self-stretch [&>*]:text-center [&>*:hover]:text-red-500 ">
+        <ul 
+        className="flex flex-col justify-center items-center gap-10 absolute top-32 right-0 border border-red-500 bg-white w-screen h-[calc(100vh-128px)] text-4xl [&>*]:self-stretch [&>*]:text-center [&>*:hover]:text-red-500 ">
           <li>
             <NavLink
               to="/home"
-              style={({ isActive, isPending }) => {
-                return {
-                  fontWeight: isActive ? "bold" : "",
-                  color: isPending ? "grey" : "red",
-                };
-              }}
+              style={navLinkStyles}
+              onClick={handleMenuClick}
             >
               Home
             </NavLink>
@@ -40,12 +48,8 @@ const MobileMenu = () => {
           <li>
             <NavLink
               to="/menu"
-              style={({ isActive, isPending }) => {
-                return {
-                  fontWeight: isActive ? "bold" : "",
-                  color: isPending ? "grey" : "red",
-                };
-              }}
+              style={navLinkStyles}
+              onClick={handleMenuClick}
             >
               Menu
             </NavLink>
@@ -54,12 +58,8 @@ const MobileMenu = () => {
           <li>
             <NavLink
               to="/contact"
-              style={({ isActive, isPending }) => {
-                return {
-                  fontWeight: isActive ? "bold" : "",
-                  color: isPending ? "grey" : "red",
-                };
-              }}
+              style={navLinkStyles}
+              onClick={handleMenuClick}
             >
               Contact Us
             </NavLink>
@@ -67,12 +67,8 @@ const MobileMenu = () => {
           <li>
             <NavLink
               to="/orders"
-              style={({ isActive, isPending }) => {
-                return {
-                  fontWeight: isActive ? "bold" : "",
-                  color: isPending ? "grey" : "red",
-                };
-              }}
+              style={navLinkStyles}
+              onClick={handleMenuClick}
             >
               Orders
             </NavLink>
@@ -80,12 +76,8 @@ const MobileMenu = () => {
           <li>
             <NavLink
               to="/cart"
-              style={({ isActive, isPending }) => {
-                return {
-                  fontWeight: isActive ? "bold" : "",
-                  color: isPending ? "grey" : "red",
-                };
-              }}
+              style={navLinkStyles}
+              onClick={handleMenuClick}
             >
               Cart
             </NavLink>

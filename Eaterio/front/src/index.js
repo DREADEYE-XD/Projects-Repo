@@ -14,6 +14,9 @@ import Pastas from "./components/menu/pastas";
 import Burgers from "./components/menu/burgers";
 import Pizzas from "./components/menu/pizzas";
 import Product from "./pages/product";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import Login from "./pages/login";
+import { AuthProvider } from "./lib/authContext";
 import { CartProvider } from "./lib/cartContext";
 
 const router = createBrowserRouter([
@@ -22,59 +25,36 @@ const router = createBrowserRouter([
     element: <LandingPage />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/menu",
-        element: <Menu />,
-      },
-      {
-        path: "/menu/pastas",
-        element: <Pastas />,
-      },
-      {
-        path: "/menu/burgers",
-        element: <Burgers />,
-      },
-      {
-        path: "/menu/pizzas",
-        element: <Pizzas />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/orders",
-        element: <Orders />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/product/:category/:id",
-        element: <Product />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
+      { index: true, element: <Home /> },
+      { path: "home", element: <Home /> },
+      { path: "menu", element: <Menu /> },
+      { path: "menu/pastas", element: <Pastas /> },
+      { path: "menu/burgers", element: <Burgers /> },
+      { path: "menu/pizzas", element: <Pizzas /> },
+      { path: "contact", element: <Contact /> },
+      { path: "orders", element: <Orders /> },
+      { path: "cart", element: <Cart /> },
+      { path: "product/:category/:id", element: <Product /> },
+      { path: "login", element: <Login /> },
     ],
   },
 ]);
 
+function App() {
+  return (
+    <GoogleOAuthProvider clientId="376702196162-ni7avjn9jl1qk5tte0skkid85ioomrpo.apps.googleusercontent.com">
+      <AuthProvider>
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
+      </AuthProvider>
+    </GoogleOAuthProvider>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
+    <App />
   </React.StrictMode>
 );

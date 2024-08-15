@@ -1,53 +1,66 @@
 import React from "react";
+import CartItems from "../components/cart/CartItems";
 import { useCart } from "../lib/cartContext";
 
 const Cart = () => {
-  const { cartItems, updateItemQuantity } = useCart();
-  console.log(cartItems);
+  const { cartItems, removeFromCart } = useCart();
+
+  const subtotal = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+  const serviceCost = 1.25;
+  const discount = 0.2; // 20%
+
+  const total = (subtotal + serviceCost) * (1 - discount);
 
   return (
-    <div className="w-screen h-[calc(100vh-128px)]">
-      {cartItems.map((item) => (
+    <div className="w-screen h-[calc(100vh-128px)] md:h-[calc(100vh-80px)] md:flex ">
+      <div className="h-[70%] w-full flex  md:h-full md:w-1/2 md:justify-center md:items-center md:border-r-[1px]">
         <div
-          key={item.id}
-          className="flex w-full h-[100px] bg-slate-50 items-center p-4 gap-3"
+          id="cartItemWrapper"
+          className="h-full w-full overflow-x-hidden overflow-y-auto flex flex-col md:max-h-[70%] md:h-auto"
         >
-          <div className="h-[80px] w-[80px]">
-            <img
-              src={item.img}
-              alt={item.title}
-              className="object-contain h-full w-full"
+          {cartItems.map((item) => (
+            <CartItems
+              key={`${item.id}-${item.size}-${item.category}`}
+              item={item}
+              onRemove={() => removeFromCart(item.id, item.size, item.category)}
             />
-          </div>
-          <div className="flex justify-between items-center w-[70%] h-full">
-            <div className="flex flex-col gap-2">
-              <span className="text-xl">{item.title}</span>
-              <div className="flex gap-2 font-bold items-center ">
-                <button
-                  className="hover:bg-red-700 bg-red-500 text-white px-2 flex justify-center items-center rounded w-[23px]"
-                  onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-                >
-                  -
-                </button>
-                <span className="font-extrabold">{item.quantity}</span>
-                <button
-                  className="hover:bg-red-700 bg-red-500 text-white px-2 flex justify-center items-center rounded w-[23px]"
-                  onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-                >
-                  +
-                </button>
-              </div>
+          ))}
+        </div>
+      </div>
+      <div className="h-[30%] w-full bg-red-100 text-red-500 font-medium md:h-full md:w-1/2 md:items-center md:bg-transparent">
+        <div className="w-full h-full flex flex-col justify-center px-20">
+          <div className="border-b-[1px] border-gray-400 ">
+            <div className="w-full h-[40px] flex items-center justify-between px-4">
+              <span>{`Subtotal (${cartItems.length} items)`}</span>
+              <span>${subtotal.toFixed(2)}</span>
             </div>
-            <span className="text-xl">${item.price}</span>
+            <div className="w-full h-[40px] flex items-center justify-between px-4">
+              <span>Service Cost</span>
+              <span>${serviceCost.toFixed(2)}</span>
+            </div>
+            <div className="w-full h-[40px] flex items-center justify-between px-4">
+              <span>Delivery Cost</span>
+              <span className=" text-green-600 ">Free!</span>
+            </div>
+            <div className="w-full h-[40px] flex items-center justify-between px-4">
+              <span>Discount</span>
+              <span className=" text-green-600 ">{discount * 100}%</span>
+            </div>
+          </div>
+
+          <div>
+            <div className="w-full h-[40px] flex items-center justify-between px-4">
+              <span>{`Total (${cartItems.length} items)`}</span>
+              <span>${total.toFixed(2)}</span>
+            </div>
+            <div className="w-full flex justify-end items-center px-4 ">
+              <button className="text-white bg-red-500 hover:bg-red-700 rounded px-5 py-1">
+                CHECKOUT
+              </button>
+            </div>
           </div>
         </div>
-      ))}
-      {cartItems ? (<div className=" h-[40px] w-screen ">
-        <div className="p-8 w-full h-full bg-slate-400 flex justify-between items-center">
-          <button className="px-5 py-1 text-white bg-red-500 hover:bg-red-700">Checkout</button>
-          <span>Item Total: <strong>$100</strong></span>
-        </div>
-      </div>) : <></> }
+      </div>
     </div>
   );
 };

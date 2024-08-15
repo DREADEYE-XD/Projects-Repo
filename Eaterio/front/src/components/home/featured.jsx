@@ -6,7 +6,8 @@ const Featured = () => {
     <div id="featuredWrapper" className="w-screen overflow-x-auto overflow-y-hidden">
       <div className="w-max flex">
         {featuredProducts.map((data) => (
-          <div key={data.id} className="w-[410px] lg:w-[500px] h-[85vh] flex flex-col items-center justify-center bg-slate-50 hover:bg-red-100 text-center">
+          <div key={data.id} 
+          className="w-[410px] lg:w-[500px] h-[85vh] flex flex-col items-center justify-center bg-slate-50 hover:bg-red-100 text-center">
             <div className="relaive h-1/2">
               <img src={data.img} alt="" className="h-4/5 w-full trans" />
             </div>

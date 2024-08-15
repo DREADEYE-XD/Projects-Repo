@@ -1,36 +1,57 @@
-import React, { createContext, useState, useContext } from "react";
+// CartContext.js
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    // Initialize cart items from localStorage if available
+    const savedCart = localStorage.getItem('cartItems');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
-  const updateItemQuantity = (itemId, newQuantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const addToCart = (item) => {
+    setCartItems((prevItems) => {
+      // console.log('Previous cart items:', prevItems);
+      const existingItem = prevItems.find(
+        (i) =>
+          i.id === item.id &&
+          i.size === item.size &&
+          i.category === item.category
+      );
+      if (existingItem) {
+        return prevItems.map((i) =>
+          i.id === item.id &&
+          i.size === item.size &&
+          i.category === item.category
+            ? {
+                ...i,
+                quantity: i.quantity + item.quantity,
+                totalPrice: i.totalPrice + item.totalPrice,
+              }
+            : i
+        );
+      } else {
+        return [...prevItems, item];
+      }
+      // console.log('New cart items:', newItems);
+    });
+  };
+
+  const removeFromCart = (itemId, size, category) => {
+    setCartItems((prevItems) => 
+      prevItems.filter((item) => 
+        !(item.id === itemId && item.size === size && item.category === category)
       )
     );
   };
 
-  const addToCart = (item, quantity) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
-        (i) => i.id === item.id && i.size === item.size
-      );
-      if (existingItem) {
-        return prevItems.map((i) =>
-          i.id === item.id && i.size === item.size
-            ? { ...i, quantity: i.quantity + quantity }
-            : i
-        );
-      }
-      return [...prevItems, { ...item, quantity: quantity }];
-    });
-  };
-
   return (
-    <CartContext.Provider value={{ cartItems, updateItemQuantity, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

@@ -339,65 +339,41 @@ export const pizzas = [
 
 export const burgers = [
   {
-    id: 1,
+    id: 7,
     title: "Double Beef",
     desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
     img: "/assests/images/p2.png",
     price: 24.9,
     options: [
       {
-        title: "Small",
+        title: "Regular",
         additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
       },
     ],
   },
   {
-    id: 2,
+    id: 8,
     title: "Supreme Delight",
     desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
     img: "/assests/images/p5.png",
     price: 32.9,
     options: [
       {
-        title: "Small",
+        title: "Regular",
         additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
       },
     ],
   },
   {
-    id: 3,
+    id: 9,
     title: "Cheesy Chicken Double Patty",
     desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
     img: "/assests/images/p9.png",
     price: 26.9,
     options: [
       {
-        title: "Small",
+        title: "Regular",
         additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
       },
     ],
   },
@@ -405,44 +381,28 @@ export const burgers = [
 
 export const pastas = [
   {
-    id: 1,
+    id: 10,
     title: "Penne Veggie",
     desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
     img: "/assests/images/p4.png",
     price: 28.9,
     options: [
       {
-        title: "Small",
+        title: "Regular",
         additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
       },
     ],
   },
   {
-    id: 2,
+    id: 11,
     title: "Macaroni Delight",
     desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
     img: "/assests/images/p7.png",
     price: 31.9,
     options: [
       {
-        title: "Small",
+        title: "Regular",
         additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
       },
     ],
   },
@@ -475,6 +435,4 @@ export const menu = [
   },
 ];
 
-export const cart = [
-  {}
-]
+export const cart = [{}];
