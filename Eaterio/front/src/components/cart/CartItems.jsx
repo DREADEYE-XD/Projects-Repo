@@ -9,11 +9,11 @@ const CartItems = ({item, onRemove}) => {
         className="object-contain h-[90%] w-1/3 md:w-auto"
       />
       <div className="flex justify-start items-center w-[65%] gap-16 md:justify-end md:w-auto md:px-10">
-        <div className="flex flex-col ">
-          <span className="font-bold text-2xl uppercase">{item.title}</span>
+        <div className="flex flex-col w-[240px] overflow-hidden">
+          <span className="font-bold text-2xl uppercase ">{item.title}</span>
           <span>Size: {item.size}</span>
         </div>
-        <span className="font-bold">${item.totalPrice.toFixed(2)}</span>
+        <span className="font-bold">${item.totalPrice}</span>
         <span className="font-bold">{item.quantity}</span>
         <button onClick={onRemove} className="">X</button>
       </div>

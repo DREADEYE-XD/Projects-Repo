@@ -1,8 +1,27 @@
-import React from "react";
-import { burgers } from "../../lib/definition";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const Burgers = () => {
+  const baseUrl = "http://localhost:3001/api";
+  const [burgers, setBurgers] = useState([{}]);
+
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}/product`)
+      .then((response) => {
+        if (response && response.data) {
+          const filteredBurgers = response.data.filter(
+            (burgerItem) => burgerItem.catSlug === "burgers"
+          );
+          setBurgers(filteredBurgers);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data", error);
+      });
+  }, []);
+
   return (
     <div className="h-max w-screen flex flex-col p-3 lg:flex-row lg:h-[calc(100vh-80px)] lg:flex-wrap lg:p-0 lg:items-center">
       {/* <div className="h-full w-full "> */}
